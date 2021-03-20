@@ -2,6 +2,10 @@
 <html lang="en">
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 <style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
     .injected-text {
     margin-bottom: 25px;
     text-align: right;
@@ -89,15 +93,23 @@
       margin-left: 25px;
       margin-bottom: 25px;
   }
-  #container {
+  #projects {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+  }
+  .welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
   }
   .responsive-img {
   max-width: 30%;
   height: auto;
 }
+
 
 </style>
 <head>
@@ -105,39 +117,41 @@
     <title>My portfolio page</title>
 </head>
 <body>
-<nav class="navbar">
+<nav class="navbar" id="navbar">
     <div>
         <ul class="menu">
             <li><a href="#">Home</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">skills</a></li>
+            <li><a href="#projects">skills</a></li>
             <li><a href="https://www.linkedin.com/in/selehadin-a-7bb11116b/">my linkedin profile</a></li>
         </ul>
     </div>
 
 </nav>
 <form class="injected-text red-text positionfixedR yellow-box" action="https://freecatphotoapp.com/submit-cat-photo"><input type="text" placeholder="search" required><button type="submit">Search</button></form>
+
+
+
+
+
+<section id="welcome-section" class="welcome-section">
+  <h1 class="center red-text">this page is selahadin's private property.</h1>
+  <p class="center red-text">a Python and Web Developer</p>
+</section>
+
+
 <br>
-<p class="center red-text yellow-box"><a href="#"><img class="center thick-blue-border" src="bild3.webp" alt="handsome car"></a>
-    <br>
-view more <a href="#" target="_blank">car photos</a></p>
-
-
-
-<h1 class="center red-text">this page is selahadin's private property .no tresspassin</h1>
-
-
-<br>
-<div id="container">
-    <p class= " canpy">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
-        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
-    </p>
-    <img class=" thick-blue-border responsive-img" src="bild1" alt="handsomecar">
-    <br>
-    <p class= " canpy2" > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta, ligula ac lacinia fermentum, lacus lacus venenatis felis, vitae varius risus neque vitae urna. Curabitur vel tortor a elit rhoncus sollicitudin. In lobortis in ante vitae auctor. Etiam vel interdum elit. Praesent ut ipsum odio. Nulla mattis ligula enim, sit amet hendrerit mauris condimentum nec. Nunc iaculis, nisi tempus cursus sagittis, lacus lacus laoreet ante, eget accumsan orci erat vel magna. Ut maximus molestie nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque nisi quam, cursus gravida tincidunt ac, rutrum tincidunt ligula. Nunc lacinia a neque eu pulvinar.</p>
-    <img class=" thick-blue-border responsive-img" src="bild2.jpg" alt="handsomecar">
-</div>
+<section id="projects">
+  <h1>These are Some of My rojects</h1>
+    <div class="projects-grid"><a class="project-tile" href="https://raw.githubusercontent.com/selehadin-cyber/weight-fat-and-muscle-percentage-data-visualisation-/main/plast.png"><p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
+            </p>
+            <img class=" thick-blue-border responsive-img" src="bild1" alt="handsomecar"></a>
+        
+        <a class="project-tile"><p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta, ligula ac lacinia fermentum, lacus lacus venenatis felis, vitae varius risus neque vitae urna. Curabitur vel tortor a elit rhoncus sollicitudin. In lobortis in ante vitae auctor. Etiam vel interdum elit. Praesent ut ipsum odio. Nulla mattis ligula enim, sit amet hendrerit mauris condimentum nec. Nunc iaculis, nisi tempus cursus sagittis, lacus lacus laoreet ante, eget accumsan orci erat vel magna. Ut maximus molestie nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque nisi quam, cursus gravida tincidunt ac, rutrum tincidunt ligula. Nunc lacinia a neque eu pulvinar.</p>
+                <img class=" thick-blue-border responsive-img" src="bild2.jpg" alt="handsomecar"></a></div>
+</section>
 
 
 <! to do
