@@ -27,6 +27,9 @@
     }
   }
   }
+  #projects {
+    margin: 60px 50px 70px 50px;
+  }
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -34,6 +37,8 @@
   .project-tile {
     margin-left: 40px;
     margin-right: 40px;
+    background: aqua;
+
   }
     .injected-text {
     margin-bottom: 25px;
@@ -50,8 +55,8 @@
         padding: 10px;
         margin-top: 50px;
     }
-  .red-text {
-    color: blueviolet;
+  .crim-text {
+    color: white;
   }
 
   a {
@@ -97,18 +102,24 @@
       border-radius: 5%;
   }
   body {
-        background-image: linear-gradient(35deg, #CCFFFF, #FFCCCC);
+        background-image: url(back7.png);
         font-family: monospace;
-    }
+        height: 100vh;
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover;
+        background-attachment: fixed; /* Resize the background image to cover the entire container */
+          }
   h1 {
   font-size: 40px;
       font-family: Lobster,serif;
   }
   .navbar {
       position: fixed;
-      width: 100%;
-      background: transparent;
-      padding: 15px 0;
+      width: 70%;
+      height: 60px;
+      background: #4ccdb5;
+      padding: 10px 0;
       margin-bottom: 50px;
   }
   .navbar .menu li{
@@ -129,6 +140,10 @@
   }
   .title {
     background-color: aqua;
+    padding: 5px;
+  }
+  .parag {
+    padding: 10px;
   }
   #yo {
     font-size: 30px
@@ -141,8 +156,9 @@
     height: 100vh;
   }
   .responsive-img {
-  max-width: 30%;
-  height: auto;
+    justify-content: center;
+    max-width: 50%;
+    height: auto;
 }
 
 
@@ -171,8 +187,8 @@
 
 
 <section id="welcome-section" class="welcome-section">
-  <h1 class="center red-text">Selahaddin Abdullah</h1>
-  <p id="yo" class="center red-text">a Python and Web Developer</p>
+  <h1 class="center crim-text">Selahaddin Abdullah</h1>
+  <p id="yo" class="center crim-text">a Python and Web Developer</p>
 </section>
 
 
@@ -181,14 +197,14 @@
 <section id="projects">
   
     <div class="projects-grid"><a class="project-tile thick-blue-border" href="https://gokpusu.com"><h1 class="title">The Gökpusu UAV Team website</h1>
-      <p>i desighned the official page for our unmanned arial vehicle development team Gökpusu</p>
+      <p class="parag">i desighned the official page for our unmanned arial vehicle development team Gökpusu</p>
             <img class="  responsive-img" src="plane.jpg" alt="handsomecar"></a>
         
         <a class="project-tile thick-blue-border" href="https://github.com/selehadin-cyber/Github-Automation"><h1 class="title">Github Automation project</h1>
-        	<p> automates the starting of a new project and hooking it up to github </p>
+        	<p class="parag"> automates the starting of a new project and hooking it up to github </p>
                 <img class="responsive-img" src="automation.png" alt="handsomecar"></a>
                 <a class="project-tile thick-blue-border" href="https://raw.githubusercontent.com/selehadin-cyber/weight-fat-and-muscle-percentage-data-visualisation-/main/plast.png"><h1 class="title">Data Visualisation project</h1>
-                  <p>in this project i use my own weight data over the years to see how may weight changed month to month</p>
+                  <p class="parag">in this project i use my own weight data over the years to see how may weight changed month to month</p>
                         <img class="  responsive-img" src="plast.png" alt="handsomecar"></a>
                       </div>
 </section>
