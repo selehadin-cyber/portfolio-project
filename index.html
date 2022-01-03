@@ -124,7 +124,6 @@
       margin-bottom: 50px;
   }
   .navbar .menu li{
-      list-style: none;
       display: inline-block;
       margin-bottom: 50px;
   }
@@ -133,6 +132,7 @@
       font-weight: 500;
       margin-left: 25px;
       margin-bottom: 25px;
+      transition: all .3s ease;
   }
   #projects {
       display: flex;
@@ -193,6 +193,7 @@
 }
 svg {
   margin: 20px;
+
 }
 .centerc {
   display: flex;
@@ -204,6 +205,62 @@ svg {
 #contact {
   margin-top: 20px;
 }
+i {
+  height: 100%;
+}
+.menu-btn {
+  font-size: 23px;
+  cursor: pointer;
+  display: none;
+}
+.navbar .max-width {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.max-width {
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+#icon {
+  cursor: pointer;
+  transition: all .3s ease;
+}
+#icon i {
+  font-size: 25px;
+  transition: all .3s ease;
+}
+#checkbox, #icon {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  ul {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: cadetblue;
+    left: 0;
+    top: 0;
+    text-align: center;
+    display: none;
+    margin-top: 70px;
+  }
+  ul li {
+    display: block;
+    padding: 10px 15px;
+  }
+  ul li a {
+    display: block;
+    padding: 10px 0;
+  }
+  #icon {
+    display: block;
+  }
+  input[type="checkbox"]:checked~ul {
+  display: block;
+    }
+}
 </style>
 <head>
     <meta charset="UTF-8">
@@ -211,15 +268,18 @@ svg {
 </head>
 <body>
 <nav class="navbar" id="navbar">
-    <div>
+    <div class="max-width">
         <ul class="menu">
             <li><a href="#">Home</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contacts</a></li>
             <li><a href="#skills">skills</a></li>
-            <li><a href="https://www.linkedin.com/in/selehadin-a-7bb11116b/">my linkedin profile</a></li>
-            <i class="fas fa-bars"></i>
+            
         </ul>
+        <input id="checkbox" type="checkbox" />
+    <label id="icon" for="checkbox">
+    <i class="fas fa-bars"></i>
+  </label>
     </div>
 
 </nav>
