@@ -189,16 +189,34 @@ svg {
   margin-top: 20px;
 }
 .top-nav {
+  position: fixed;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   background-color: #00BAF0;
-  background: linear-gradient(to left, #f46b45, #eea849);
+  background: #4cbdb5;
+  width: 60%;
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: #FFF;
-  height: 50px;
+  height: 60px;
   padding: 1em;
+  font-size: 20px;
+  z-index: 999;
+}
+.top-nav::after { 
+  position: absolute;
+  content: "";
+  background: #4cbdb5;
+  color: red;
+  font-weight: bold;
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  left: calc(100% - 60px);
+  top: -60px;
+  right: -60px;
+  
 }
 
 .menu {
@@ -210,7 +228,7 @@ svg {
 }
 
 .menu > li {
-  margin: 0 1rem;
+  margin: 0 2rem;
 }
 
 .menu-button-container {
