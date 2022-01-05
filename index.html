@@ -63,7 +63,8 @@
 
   a {
       color: red;
-      text-decoration: none;
+      text-decoration: none !important;
+      
   }
   a:hover {
     color: red;
@@ -280,7 +281,17 @@ svg {
   margin-top: 0px;
   transform: rotate(-405deg);
 }
-
+#contact {
+  width: 100%;
+  padding: 30px;
+  background: black;
+}
+#profile-link {
+  margin: 20px;
+}
+#contact div h2,#contact div a {
+  color: #00BAF0;
+}
 @media all and (max-width: 800px) {
   .menu-button-container {
     display: flex;
@@ -420,10 +431,12 @@ svg {
 <section id="contact" class="center">
   <div>
     <h2>Let's work 2gether</h2>
-    <p>How do you like it served</p>
   </div>
   <div id="contact-links">
     <a href="https://github.com/selehadin-cyber/portfolio-project" id="profile-link" target="_blank"><i class="fab fa-github"></i> Github</a>
+    <a href="https://www.instagram.com/selehadin4416/" id="profile-link" target="_blank"><i class="fab fa-instagram"></i> Insragram</a>
+    <a href="https://www.linkedin.com/in/selehadin-a-7bb11116b/" id="profile-link" target="_blank"><i class="fab fa-linkedin"></i> Linkedin</a>
+
   </div>
 </section>
 </body>
