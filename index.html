@@ -299,12 +299,28 @@ svg {
   background-attachment: fixed;
 }
 #aboutme p {
-  position: absolute;
+  
   width: 75%;
   right: 0;
-  padding: 30px;
-  font-size: 24px;
+  align-self: end;
+  margin-right: 47px;
 }
+#aboutme a {
+  margin-bottom: 0;
+  margin-top: 58vh;
+  display: block;
+  font-size: 13px;
+  align-self: end;
+}
+.containera {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  font-size: 20px;
+}
+.item1 {
+  grid-row: 2 / 4;
+} 
 @media all and (max-width: 800px) {
   .menu-button-container {
     display: flex;
@@ -350,11 +366,24 @@ svg {
   .menu > li:not(:last-child) {
     border-bottom: 1px solid #444;
   }
-  #projects {
+  #projects, #skills, #aboutme {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       background-color: white;
+      height: fit-content;
+  }
+  #skills {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      background-color: grey;
+      height: fit-content;
+  }
+  #aboutme {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
       height: fit-content;
   }
 }
@@ -374,7 +403,8 @@ svg {
       <li><a href="#">Home</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contacts</a></li>
-      <li><a href="#skills">skills</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#aboutme">About me</a></li>
     </ul>
   </section>
 
@@ -443,7 +473,10 @@ svg {
 </section>
 <section id="aboutme">
   <div class="centerc"><h1 class="center">a litttle bit about me</h1></div>
-  <p>I am currently studying 4. Year manufacturing
+  <div class="containera">
+  
+  <a class="item2" href='https://www.freepik.com/vectors/background'> Background vector created by rawpixel.com - www.freepik.com </a>
+  <p class="item1">I am currently studying 4. Year manufacturing
     engineering, I have a burning passion for
     automotive design
     at the same time I enjoy coding specially using
@@ -451,7 +484,8 @@ svg {
     I love making data visualizations from data sets
     and getting insights that otherwise would have
     been hard to get.</p>
-</section>
+</div>
+  </section>
 <section id="contact" class="center">
   <div>
     <h2>Let's work 2gether</h2>
