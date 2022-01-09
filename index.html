@@ -42,6 +42,12 @@
     background: aqua;
 
   }
+  .project-tile:hover {
+    transform: scale(1.03);
+  }
+  h2 {
+    font-family: sans-serif;
+  }
     .injected-text {
     margin-bottom: 25px;
     text-align: right;
@@ -62,7 +68,7 @@
   }
 
   a {
-      color: red;
+      color: black;
       text-decoration: none !important;
       
   }
@@ -187,11 +193,14 @@ svg {
 	background-color: gainsboro;
 	border-radius: 20px;
 }
+.itemsk:hover {
+	transform: scale(1.05);
+}
 .centerc {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 50px;
+  padding-top: 50px;
   margin-bottom: 40px;
 }
 
@@ -223,6 +232,7 @@ svg {
   left: calc(100% - 60px);
   top: -60px;
   right: -60px;
+  z-index: auto;
   
 }
 
@@ -299,7 +309,6 @@ svg {
   color: #00BAF0;
 }
 #aboutme {
-  margin: 1px;
   height: 100vh;
   background-color: yellowgreen;
 }
@@ -333,12 +342,13 @@ svg {
   .menu {
     position: absolute;
     top: 0;
-    margin-top: 50px;
+    margin-top: 60px;
     left: 0;
     flex-direction: column;
     width: 100%;
     justify-content: center;
     align-items: center;
+    z-index: 999;
   }
   #menu-toggle ~ .menu {
     display: none;
@@ -371,7 +381,7 @@ svg {
   .menu > li:not(:last-child) {
     border-bottom: 1px solid #444;
   }
-  #projects, #aboutme {
+  #projects {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -390,6 +400,7 @@ svg {
       flex-direction: column;
       flex-wrap: wrap;
       height: fit-content;
+      text-align: center;
   }
 }
 
@@ -427,7 +438,7 @@ svg {
 <br>
 
 <section id="projects">
-  <div class="centerc"><h1 class="center">These are Some of My projects</h1></div>
+  <div class="centerc"><h2 class="center">These are Some of My projects</h2></div>
     <div class="projects-grid"><a class="project-tile thick-blue-border" href="https://gokpusu.com"><h1 class="title">The Gökpusu UAV Team website</h1>
       <p class="parag">i desighned the official page for our unmanned arial vehicle development team Gökpusu</p>
             <img class="  responsive-img" src="plane.jpg" alt="handsomecar"></a>
@@ -448,7 +459,7 @@ svg {
         add some animation>
 
 <section id="skills">
-<div class="centerc"><h1 class="center">some of my skills</h1></div>
+<div class="centerc"><h2 class="center">Some of my skills</h2></div>
 <div class="skillcontainer">
   <div class="itemsk"><svg width="125px"  viewBox="0 0 256 255" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
     <defs>
@@ -480,7 +491,6 @@ svg {
   <div class="centerc"><h1 class="center">a litttle bit about me</h1></div>
   <div class="containera">
   
-  <a class="item2" href='https://www.freepik.com/vectors/background'> Background vector created by rawpixel.com - www.freepik.com </a>
   <p class="item1">I am currently studying 4. Year manufacturing
     engineering, I have a burning passion for
     automotive design
@@ -497,7 +507,7 @@ svg {
   </div>
   <div id="contact-links">
     <a href="https://github.com/selehadin-cyber/portfolio-project" id="profile-link" target="_blank"><i class="fab fa-github"></i> Github</a>
-    <a href="https://www.instagram.com/selehadin4416/" id="profile-link" target="_blank"><i class="fab fa-instagram"></i> Insragram</a>
+    <a href="https://www.instagram.com/selehadin4416/" id="profile-link" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
     <a href="https://www.linkedin.com/in/selehadin-a-7bb11116b/" id="profile-link" target="_blank"><i class="fab fa-linkedin"></i> Linkedin</a>
 
   </div>
