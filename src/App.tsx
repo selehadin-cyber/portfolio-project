@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './bitmassssp.png';
 import './App.css';
 
 function App() {
@@ -8,15 +8,16 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Selehadins portfolio is coming soon
         </p>
+        <p>this time with react and typescript 😃</p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://www.linkedin.com/in/selehadin-a-7bb11116b/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          in the mean time visit my linkedIn page
         </a>
       </header>
     </div>
