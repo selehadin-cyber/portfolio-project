@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/selehadin.xyz/static/css/main.073c9b0a.css",
+    "main.js": "/selehadin.xyz/static/js/main.5b2429ab.js",
+    "static/js/787.2cbb9adc.chunk.js": "/selehadin.xyz/static/js/787.2cbb9adc.chunk.js",
+    "static/media/bitmassssp.png": "/selehadin.xyz/static/media/bitmassssp.6f3635ed60dbf423b8ce.png",
+    "index.html": "/selehadin.xyz/index.html",
+    "main.073c9b0a.css.map": "/selehadin.xyz/static/css/main.073c9b0a.css.map",
+    "main.5b2429ab.js.map": "/selehadin.xyz/static/js/main.5b2429ab.js.map",
+    "787.2cbb9adc.chunk.js.map": "/selehadin.xyz/static/js/787.2cbb9adc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.5b2429ab.js"
+  ]
+}
