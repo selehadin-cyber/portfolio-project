@@ -27,6 +27,13 @@
 .App-link {
   color: #61dafb;
 }
+ul {
+  @include flexCenter(row);
+  gap: 10rem;
+  list-style: none;
+  padding: 25px;
+  background-color: transparent;
+}
 
 @keyframes App-logo-spin {
   from {

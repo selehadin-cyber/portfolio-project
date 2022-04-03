@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10rem;
+  list-style: none;
+  padding: 25px;
+  /*background-color: green;*/
+}
+
+li {
+  color: white;
+  cursor: pointer;
+}/*# sourceMappingURL=Navbar.css.map */
