@@ -11,11 +11,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.App {
-  background: #0a192f no-repeat center;
-  background-size: auto;
-  background-size: cover;
-  height: 100vh;
-  color: #009C9C;
-  min-height: 500px;
-}
+
