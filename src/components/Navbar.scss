@@ -1,3 +1,4 @@
+@import url('http://fonts.cdnfonts.com/css/sf-mono');
 * {
     margin: 0;
     padding: 0;
@@ -19,17 +20,25 @@
 nav {
     position: fixed;
     top: 0;
-    width: 100%; 
+    width: 100%;
+    z-index: 999;
+    padding-left: 30px;
+    color: #64ffda
 }
 ul {
     @include flexCenter(row);
+    justify-content: start;
     gap: 10rem;
     list-style: none;
     padding: 25px;
+    background-color: transparent;
+}
+ul.active {
     background-color: green;
 }
 
 li {
-    color: white;
     cursor: pointer;
+    font-family: 'SF Mono', sans-serif;
+                                                
 }
