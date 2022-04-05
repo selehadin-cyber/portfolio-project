@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import "./Navbar.scss";
 import Toggle from './Toggle';
 
-function Navbar() {
+
+function Navbar({className}) {
     const [hasScrolled, setHasScrolled] = useState(false);
     
     const changeNavBackground = () => {
@@ -14,7 +15,7 @@ function Navbar() {
     window.addEventListener("scroll", changeNavBackground)
   return (
     <>
-    <nav>
+    <nav className={className}>
         <ul className={hasScrolled ? "active" : undefined}>
             <li>Home</li>
             <li>About</li>

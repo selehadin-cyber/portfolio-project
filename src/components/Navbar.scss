@@ -28,7 +28,7 @@ nav {
 ul {
     @include flexCenter(row);
     justify-content: start;
-    gap: 10rem;
+    gap: 7rem;
     list-style: none;
     padding: 25px;
     background-color: transparent;
@@ -41,4 +41,28 @@ li {
     cursor: pointer;
     font-family: 'SF Mono', sans-serif;
                                                 
+}
+
+@media screen and (max-width: 750px) {
+    nav {
+        position: absolute;
+        top: 50px;
+        right: -100%;
+        width: 70%;
+        z-index: 999;
+        padding-left: 30px;
+        color: #64ffda;
+        background-color: var(--light-navy)
+    }
+    nav.active {
+        right: 0;
+    }
+    ul {
+        @include flexCenter(column);
+        justify-content: start;
+        gap: 5rem;
+        list-style: none;
+        padding: 25px;
+        background-color: transparent;
+    }
 }

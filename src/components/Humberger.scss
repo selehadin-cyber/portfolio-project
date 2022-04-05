@@ -1,0 +1,33 @@
+div .hum-con {
+    position: absolute;
+    top: 20px;
+    right: 55px;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    gap: 5px;
+    display: none;
+}
+.lines {
+    width: 20px;
+    height: 3px;
+    margin-bottom: 5px;
+    background-color: var(--green);
+}
+#1 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    rotate: 45deg;
+}
+
+
+@media screen and (max-width: 750px) {
+    div .hum-con {
+        position: absolute;
+        display: block;
+    }
+    
+    
+  }
