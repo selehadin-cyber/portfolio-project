@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import logo from "./bitmassssp.png";
+/* import logo from "./bitmassssp.png"; */
 import "./App.css";
 import Navbar from "./components/Navbar";
 import SocialList from "./components/Social";
 import Email from "./components/Email";
 import Humburger from "./components/Humburger";
+import About from "./components/About";
 
 function App() {
   const [navActive, setNavActive] = useState(false);
@@ -30,6 +31,7 @@ function App() {
           awesome sites and also making meaningfull and value delivering apps
         </p>
         <a href="/" className="cta">Get in touch</a>
+        <About />
       </main>
     </div>
   );

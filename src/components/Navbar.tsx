@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./Navbar.scss";
-import Toggle from './Toggle';
+/* import Toggle from './Toggle'; */
 import IconLogo from "../s_logo";
 
 
