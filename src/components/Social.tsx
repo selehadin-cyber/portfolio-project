@@ -8,6 +8,9 @@ const Social = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
+  @media (max-width: 768px) {
+    display: none;
+  }
   &:after {
     content: "";
     display: block;

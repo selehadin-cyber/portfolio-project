@@ -27,7 +27,7 @@ nav {
 }
 ul {
     @include flexCenter(row);
-    justify-content: start;
+    justify-content: flex-end;
     gap: 7rem;
     list-style: none;
     padding: 25px;
@@ -59,7 +59,7 @@ li {
     }
     ul {
         @include flexCenter(column);
-        justify-content: start;
+        justify-content: end;
         gap: 5rem;
         list-style: none;
         padding: 25px;

@@ -5,6 +5,9 @@ const StyledLinkWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
+  @media (max-width: 768px) {
+    display: none;
+  }
   &:after {
     content: '';
     display: block;
