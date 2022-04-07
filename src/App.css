@@ -57,6 +57,9 @@ html {
   background-size: cover;
   color: #009C9C;
   min-height: 500px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 .side {
   position: fixed;

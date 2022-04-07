@@ -8,6 +8,7 @@ import profile from "../selo.jpg";
 const StyledAboutSection = styled.section`
   max-width: 900px;
   padding: 100px 0px;
+  width: 100%;
   .numbered-heading::before {
     position: relative;
     bottom: 0px;
