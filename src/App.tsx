@@ -8,6 +8,8 @@ import Humburger from "./components/Humburger";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import profile from "./selo.jpg"
+import Contact from "./components/Contact";
+import ProjectInner from "./components/TestProject";
 
 function App() {
   const [navActive, setNavActive] = useState(false);
@@ -34,7 +36,9 @@ function App() {
         </p>
         <a href="/" className="cta">Get in touch</a>
         <About />
-        <Projects title={"web3 project"} description={"lorem ipsum dolor amit"} imgUrl={profile}/>
+        {/* <Projects title={"web3 project"} description={"lorem ipsum dolor amit"} imgUrl={profile}/> */}
+        <ProjectInner />
+        <Contact />
       </main>
     </div>
   );

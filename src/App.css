@@ -122,7 +122,20 @@ h2 {
 	font-size: clamp(26px,5vw,var(--fz-heading));
 	white-space: nowrap;
 }
+.projects-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 15px;
+  position: relative;
+  margin-top: 50px;
 
+  @media (max-width: 1080px) {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
 
 
 

@@ -23,7 +23,8 @@ nav {
     max-width: 100%;
     z-index: 999;
     padding-left: 30px;
-    color: #64ffda
+    color: #64ffda;
+    right: 30px;
 }
 ul {
     @include flexCenter(row);
