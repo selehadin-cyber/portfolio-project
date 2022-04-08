@@ -5,7 +5,7 @@ const StyledProjectsSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  width: 100%;
   h2 {
     font-size: clamp(24px, 5vw, var(--fz-heading));
   }
@@ -254,10 +254,10 @@ const ProjectInner = (/* node */) => {
   const external = "http://web3-nft-project.vercel.app/";
   const tech = ["Reactjs", "Nextjs", "Sanity"];
   const html =
-    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, ";
+    "a Web3 smart contract project in which everyone can buy premium art work using their metamask wallet.";
 
   return (
-    <StyledProjectsSection>
+    <StyledProjectsSection id="projects">
       <h2 className="numbered-heading">Somethings I have Built</h2>
       <ul className="projects-grid">
         <StyledProject>
@@ -322,7 +322,7 @@ const ProjectInner = (/* node */) => {
                 <div className="project-links">
                   {github && (
                     <a
-                      href={github}
+                      href="https://github.com/selehadin-cyber/gokpusu-sitesi"
                       aria-label="GitHub Link"
                       target="_blank"
                       rel="noreferrer"
@@ -344,14 +344,14 @@ const ProjectInner = (/* node */) => {
                 </div>
               </div>
               <h3 className="project-title">
-                <a href={external} target="_blank" rel="noreferrer">
+                <a href="https://selehadin-cyber.github.io/gokpusu-sitesi/" target="_blank" rel="noreferrer">
                   Official website of Gökpusu
                 </a>
               </h3>
               <div
                 className="project-description"
-                dangerouslySetInnerHTML={{ __html: html }}
-              />
+                
+              >i made the official website for the startup technology team Gökpusu</div>
             </header>
             <footer>
               {tech && (
@@ -374,7 +374,7 @@ const ProjectInner = (/* node */) => {
                 <div className="project-links">
                   {github && (
                     <a
-                      href={github}
+                      href="https://github.com/selehadin-cyber/Amana"
                       aria-label="GitHub Link"
                       target="_blank"
                       rel="noreferrer"
@@ -384,7 +384,7 @@ const ProjectInner = (/* node */) => {
                   )}
                   {external && (
                     <a
-                      href={external}
+                      href="https://amanaorg.netlify.app/"
                       aria-label="External Link"
                       className="external"
                       target="_blank"
@@ -396,14 +396,14 @@ const ProjectInner = (/* node */) => {
                 </div>
               </div>
               <h3 className="project-title">
-                <a href={external} target="_blank" rel="noreferrer">
-                  {title}
+                <a href="https://amanaorg.netlify.app/" target="_blank" rel="noreferrer">
+                  The Amana Association website
                 </a>
               </h3>
               <div
                 className="project-description"
-                dangerouslySetInnerHTML={{ __html: html }}
-              />
+                
+              >was contracted to make a website for the Amana Humanitarian Association</div>
             </header>
             <footer>
               {tech && (
@@ -426,7 +426,7 @@ const ProjectInner = (/* node */) => {
                 <div className="project-links">
                   {github && (
                     <a
-                      href={github}
+                      href="https://github.com/selehadin-cyber/Javascript-Calculator-with-Dark-mode"
                       aria-label="GitHub Link"
                       target="_blank"
                       rel="noreferrer"
@@ -436,7 +436,7 @@ const ProjectInner = (/* node */) => {
                   )}
                   {external && (
                     <a
-                      href={external}
+                      href="https://selehadin-cyber.github.io/Javascript-Hesap-Makinesi/"
                       aria-label="External Link"
                       className="external"
                       target="_blank"
@@ -448,14 +448,14 @@ const ProjectInner = (/* node */) => {
                 </div>
               </div>
               <h3 className="project-title">
-                <a href={external} target="_blank" rel="noreferrer">
-                  {title}
+                <a href="https://selehadin-cyber.github.io/Javascript-Hesap-Makinesi/" target="_blank" rel="noreferrer">
+                  Calculator with dark-mode
                 </a>
               </h3>
               <div
                 className="project-description"
-                dangerouslySetInnerHTML={{ __html: html }}
-              />
+               
+              >one missing feuture in many of todays calculators is dark mode, so I decided to make it myself</div>
             </header>
             <footer>
               {tech && (

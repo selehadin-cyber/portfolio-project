@@ -41,6 +41,10 @@
 html {
 	scrollbar-color: var(--dark-slate) var(--navy);
 }
+a {
+  text-decoration: none;
+  color: var(--green);
+}
 .logo svg {
   width: 60px;
   position: absolute;

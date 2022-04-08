@@ -22,14 +22,24 @@ const Navbar:React.FunctionComponent<ClassProps> = ({className}) => {
   return (
     <>
     <div className="logo">
-        <IconLogo />
+        <a href="/">
+          <IconLogo />
+        </a>
       </div>
     <nav className={className}>
         <ul className={hasScrolled ? "active" : undefined}>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
-            <li>Works</li>
+            <a href="/">
+              <li>Home</li>
+            </a>
+            <a href="#about">
+              <li>About</li>
+            </a>
+            <a href="#contact">
+              <li>Contact</li>
+            </a>
+            <a href="#projects">
+              <li>Works</li>
+            </a>
             {/* <Toggle /> */}
         </ul>
     </nav>
