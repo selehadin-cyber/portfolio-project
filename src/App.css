@@ -91,6 +91,7 @@ h2 {
   margin: 20px 0px 0px;
   max-width: 540px;
   font-size: 20px;
+  color: var(--lightest-slate);
 }
 .cta {
 	color: #64ffda;

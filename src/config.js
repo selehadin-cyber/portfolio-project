@@ -1,7 +1,11 @@
 module.exports = {
   email: 'sele4416@gmail.com',
 
-  
+  socialMedia: [
+    {
+      name: 'GitHub',
+      url: 'https://github.com/selehadin-cyber',
+    }],
 
   colors: {
     green: '#64ffda',

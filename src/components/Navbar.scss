@@ -61,7 +61,7 @@ li {
     }
     ul {
         @include flexCenter(column);
-        justify-content: end;
+        justify-content: flex-end;
         gap: 5rem;
         list-style: none;
         padding: 25px;

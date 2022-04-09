@@ -6,10 +6,9 @@ import SocialList from "./components/Social";
 import Email from "./components/Email";
 import Humburger from "./components/Humburger";
 import About from "./components/About";
-import Projects from "./components/Projects";
-import profile from "./selo.jpg"
 import Contact from "./components/Contact";
 import ProjectInner from "./components/TestProject";
+import Footer from "./components/footer";
 
 function App() {
   const [navActive, setNavActive] = useState(false);
@@ -40,6 +39,7 @@ function App() {
         <ProjectInner />
         <Contact />
       </main>
+      <Footer />
     </div>
   );
 }
