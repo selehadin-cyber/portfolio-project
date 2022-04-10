@@ -9,12 +9,22 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import ProjectInner from "./components/TestProject";
 import Footer from "./components/footer";
+import { ThemeProvider } from "styled-components";
+import { EnglishTheme, TurkishTheme } from "./components/Themes";
+
 
 function App() {
   const [navActive, setNavActive] = useState(false);
+  const [language, setLanguage] = useState("English");
+
+
+  const toggleFunction = () => {
+    language === "English" ? setLanguage("Turkish") : setLanguage("English");
+  };
   return (
+    <ThemeProvider theme={language === "English" ? EnglishTheme : TurkishTheme}>
     <div className="App">
-      <Navbar className={navActive ? "active": undefined}/>
+      <Navbar className={navActive ? "active": undefined} toggleFunction={toggleFunction} />
       
       <div className="side">
       <SocialList />
@@ -41,6 +51,7 @@ function App() {
       </main>
       <Footer />
     </div>
+    </ThemeProvider>
   );
 }
 

@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import "./Navbar.scss";
-/* import Toggle from './Toggle'; */
+import Toggle from './Toggle';
 import IconLogo from "../s_logo";
 
 
 interface ClassProps{
   className: any;
+  toggleFunction: Function;
 }
 
 
-const Navbar:React.FunctionComponent<ClassProps> = ({className}) => {
+const Navbar:React.FunctionComponent<ClassProps> = ({className, toggleFunction}) => {
     const [hasScrolled, setHasScrolled] = useState(false);
     
     const changeNavBackground = () => {
@@ -40,7 +41,9 @@ const Navbar:React.FunctionComponent<ClassProps> = ({className}) => {
             <a href="#projects">
               <li>Works</li>
             </a>
-            {/* <Toggle /> */}
+            <li className='toggle-container' onClick={() => {toggleFunction();console.log("i was clicked")}}>
+              EN <Toggle /> TR
+            </li>
         </ul>
     </nav>
     </>
