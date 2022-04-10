@@ -5,6 +5,10 @@ import sr from "../utils/sr";
 import { usePrefersReducedMotion } from "../hooks";
 import profile from "../selo.jpg";
 
+interface Language {
+  language: string;
+}
+
 const StyledAboutSection = styled.section`
   max-width: 900px;
   padding: 100px 0px;
@@ -40,13 +44,13 @@ const StyledAboutSection = styled.section`
     outline: currentcolor none 0px;
   }
   p > a {
-	display: inline-block;
-	text-decoration: none;
-	text-decoration-skip-ink: auto;
-	position: relative;
-	transition: var(--transition);
-	color: var(--green);
-}
+    display: inline-block;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    position: relative;
+    transition: var(--transition);
+    color: var(--green);
+  }
   .inner {
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -170,7 +174,7 @@ const StyledPic = styled.div`
   }
 `;
 
-const About = () => {
+const About: React.FunctionComponent<Language> = ({ language }) => {
   const revealContainer = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
 
@@ -193,27 +197,61 @@ const About = () => {
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
-      <h2 className="numbered-heading">About Me</h2>
+      <h2 className="numbered-heading">
+        {language === "English" ? "About Me" : "Hakkımda"}
+      </h2>
 
       <div className="inner">
         <StyledText>
           <div>
-            <p>
-              Hello! My name is Selehadin and I enjoy creating things that live
-              on the internet. My interest in web development started back in
-              2020
-            </p>
+            {language === "English" ? (
+              <>
+                <p>
+                  Hello! My name is Selehadin and I enjoy creating things that
+                  live on the internet. My interest in web development started
+                  back in 2020
+                </p>
 
-            <p>
-              Fast-forward to today, and I've had the privilege of working at{" "}
-              <a href="https://www.erbakir.com.tr/">a cable manufacturing company</a> and  <a href="https://gokpusu.com">a start-up</a>,{" "}
-              . My main focus these
-              days is building accessible, inclusive products and digital
-              experiences at <a href="https://gokpusu.com">Gökpusu</a> for a variety of
-              clients.
-            </p>
+                <p>
+                  Fast-forward to today, and I've had the privilege of working
+                  at{" "}
+                  <a href="https://www.erbakir.com.tr/">
+                    a cable manufacturing company
+                  </a>{" "}
+                  and <a href="https://gokpusu.com">a start-up</a>, . My main
+                  focus these days is building accessible, inclusive products
+                  and digital experiences at{" "}
+                  <a href="https://gokpusu.com">Gökpusu</a> for a variety of
+                  clients.
+                </p>
 
-            <p>Here are a few technologies I've been working with recently:</p>
+                <p>
+                  Here are a few technologies I've been working with recently:
+                </p>
+              </>
+            ) : (
+              <>
+                <p>
+                  Merhaba! benim adım Selehadin.internette yaşayan şeyleri
+                  geliştirmeyi severim. geliştirmeye olan ilgim 2020 yılında
+                  başladı
+                </p>
+
+                <p>
+                  bügüne geldiğimizde{" "}
+                  <a href="https://www.erbakir.com.tr/">
+                    kablo üretici firmada
+                  </a>{" "}
+                  ve <a href="https://gokpusu.com">bir start-upda</a> çalışma
+                  fırsattım oldu. Bügünlerde Önceliğim engelsiz, ileri ve digital tecrubbeleri {" "}
+                  <a href="https://gokpusu.com">Gökpusu</a> da geliştirmektır.
+                </p>
+
+                <p>
+                  yakın zamanda çalışırken kolandığım teknolojiler:
+                </p>
+              </>
+            )}
           </div>
 
           <ul className="skills-list">
