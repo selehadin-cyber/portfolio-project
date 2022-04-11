@@ -1,5 +1,8 @@
 import { Icon } from "../components/icons";
 import styled from "styled-components";
+import { srConfig } from '../config';
+import sr from '../utils/sr';
+import { useEffect, useRef } from "react";
 
 interface Language {
   language: string;
@@ -255,6 +258,10 @@ const ProjectInner: React.FunctionComponent<Language> = (
 ) => {
   /* const { frontmatter, html } = node;
     const { github, external, title, tech } = frontmatter; */
+    const revealTitle = useRef(null);
+    const revealProjects = useRef([]);
+
+
   const github = "https://github.com/selehadin-cyber/web3-nft-project";
   const title = "WEB3 nft project";
   const external = "http://web3-nft-project.vercel.app/";
@@ -262,13 +269,21 @@ const ProjectInner: React.FunctionComponent<Language> = (
   const html =
     "a Web3 smart contract project in which everyone can buy premium art work using their metamask wallet.";
 
+    useEffect(() => {
+      
+  
+      sr.reveal(".numbered-heading", srConfig());
+      sr.reveal(".project-inner", srConfig());
+    }, []);
+
   return (
     <StyledProjectsSection id="projects">
       {language === "English" ? (
         <>
-          <h2 className="numbered-heading">Somethings I have Built</h2>
+          <h2 ref={revealTitle} className="numbered-heading">Somethings I have Built</h2>
           <ul className="projects-grid">
-            <StyledProject>
+            
+            <StyledProject /* ref={revealProjects.current} */>
               <div className="project-inner">
                 <header>
                   <div className="project-top">

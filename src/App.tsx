@@ -62,7 +62,7 @@ function App() {
               </span>
             )}
           </p>
-          <a href="/" className="cta">
+          <a href="mailto:sele4416@gmail.com" className="cta">
             {language === "English" ? ("Get in touch") : ("iletişime geçin")}
           </a>
           <About language={language} />
