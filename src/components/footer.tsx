@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { Icon } from '../components/icons';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { Icon } from "../components/icons";
 
-
+interface Language {
+  language: string;
+}
 
 const StyledFooter = styled.footer`
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   height: auto;
   min-height: 70px;
@@ -29,7 +30,7 @@ const StyledSocialLinks = styled.div`
 
   ul {
     display: flex;
-    justify-content: center ;
+    justify-content: center;
     flex-direction: row;
     gap: 15px;
     align-items: center;
@@ -74,48 +75,52 @@ const StyledCredit = styled.div`
   }
 `;
 
-const Footer = () => {
+const Footer: React.FunctionComponent<Language> = ({ language }) => {
   const [githubInfo, setGitHubInfo] = useState({
     stars: 20,
     forks: 1000,
   });
 
   useEffect(() => {
-    
-    fetch('https://api.github.com/repos/selehadin-cyber/portfolio-project')
-      .then(response => response.json())
-      .then(json => {
+    fetch("https://api.github.com/repos/selehadin-cyber/portfolio-project")
+      .then((response) => response.json())
+      .then((json) => {
         const { stargazers_count, forks_count } = json;
         setGitHubInfo({
           stars: stargazers_count,
           forks: forks_count,
         });
       })
-      .catch(e => console.error(e));
+      .catch((e) => console.error(e));
   }, []);
 
   return (
     <StyledFooter>
       <StyledSocialLinks>
         <ul>
-          
-              <li>
-                <a href="https://www.linkedin.com/in/selehadin-a-7bb11116b/" aria-label="linkedin">
-                  <Icon name={"Linkedin"} />
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/selehadin-cyber" aria-label="github">
-                  <Icon name={"GitHub"} />
-                </a>
-              </li>
-           
+          <li>
+            <a
+              href="https://www.linkedin.com/in/selehadin-a-7bb11116b/"
+              aria-label="linkedin"
+            >
+              <Icon name={"Linkedin"} />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/selehadin-cyber" aria-label="github">
+              <Icon name={"GitHub"} />
+            </a>
+          </li>
         </ul>
       </StyledSocialLinks>
 
       <StyledCredit>
         <a href="https://github.com/bchiang7/v4">
-          <div>Designed by Brittany Chiang coded by Selehadin Abdurahman</div>
+          {language === "English" ? (
+            <div>Designed by Brittany Chiang coded by Selehadin Abdurahman</div>
+          ) : (
+            <div>Brittany Chiang tarafından tasarlandı, kodlanan Selehadin Abdurahman</div>
+          )}
 
           {githubInfo.stars && githubInfo.forks && (
             <div className="github-stats">
@@ -134,10 +139,5 @@ const Footer = () => {
     </StyledFooter>
   );
 };
-
-Footer.propTypes = {
-    githubInfo: PropTypes.object,
-  };
-
 
 export default Footer;

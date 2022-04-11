@@ -1,34 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "./Navbar.scss";
-import Toggle from './Toggle';
+import Toggle from "./Toggle";
 import IconLogo from "../s_logo";
 
-
-interface ClassProps{
+interface ClassProps {
   className: any;
   toggleFunction: Function;
+  language: string;
 }
 
+const Navbar: React.FunctionComponent<ClassProps> = ({
+  className,
+  toggleFunction,
+  language,
+}) => {
+  const [hasScrolled, setHasScrolled] = useState(false);
 
-const Navbar:React.FunctionComponent<ClassProps> = ({className, toggleFunction}) => {
-    const [hasScrolled, setHasScrolled] = useState(false);
-    
-    const changeNavBackground = () => {
-      if (window.scrollY > 80) {
-        setHasScrolled(true)
-      } else {setHasScrolled(false)}
-
+  const changeNavBackground = () => {
+    if (window.scrollY > 80) {
+      setHasScrolled(true);
+    } else {
+      setHasScrolled(false);
     }
-    window.addEventListener("scroll", changeNavBackground)
+  };
+  window.addEventListener("scroll", changeNavBackground);
   return (
     <>
-    <div className="logo">
+      <div className="logo">
         <a href="/">
           <IconLogo />
         </a>
       </div>
-    <nav className={className}>
-        <ul className={hasScrolled ? "active" : undefined}>
+      <nav className={className}>
+        {language === "English" ? (
+          <ul className={hasScrolled ? "active" : undefined}>
             <a href="/">
               <li>Home</li>
             </a>
@@ -41,13 +46,44 @@ const Navbar:React.FunctionComponent<ClassProps> = ({className, toggleFunction})
             <a href="#projects">
               <li>Works</li>
             </a>
-            <li className='toggle-container' onClick={() => {toggleFunction();console.log("i was clicked")}}>
+            <li
+              className="toggle-container"
+              onClick={() => {
+                toggleFunction();
+                console.log("i was clicked");
+              }}
+            >
               EN <Toggle /> TR
             </li>
-        </ul>
-    </nav>
+          </ul>
+        ) : (
+          <ul className={hasScrolled ? "active" : undefined}>
+            <a href="/">
+              <li>Anasayfa</li>
+            </a>
+            <a href="#about">
+              <li>Hakkımda</li>
+            </a>
+            <a href="#contact">
+              <li>İletişim</li>
+            </a>
+            <a href="#projects">
+              <li>Projeler</li>
+            </a>
+            <li
+              className="toggle-container"
+              onClick={() => {
+                toggleFunction();
+                console.log("i was clicked");
+              }}
+            >
+              EN <Toggle /> TR
+            </li>
+          </ul>
+        )}
+      </nav>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

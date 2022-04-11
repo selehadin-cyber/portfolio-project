@@ -1,6 +1,10 @@
 import { Icon } from "../components/icons";
 import styled from "styled-components";
 
+interface Language {
+  language: string;
+}
+
 const StyledProjectsSection = styled.section`
   display: flex;
   flex-direction: column;
@@ -246,7 +250,9 @@ const StyledProject = styled.li`
   }
 `;
 
-const ProjectInner = (/* node */) => {
+const ProjectInner: React.FunctionComponent<Language> = (
+  /* node */ { language }
+) => {
   /* const { frontmatter, html } = node;
     const { github, external, title, tech } = frontmatter; */
   const github = "https://github.com/selehadin-cyber/web3-nft-project";
@@ -258,217 +264,457 @@ const ProjectInner = (/* node */) => {
 
   return (
     <StyledProjectsSection id="projects">
-      <h2 className="numbered-heading">Somethings I have Built</h2>
-      <ul className="projects-grid">
-        <StyledProject>
-          <div className="project-inner">
-            <header>
-              <div className="project-top">
-                <div className="folder">
-                  <Icon name="Folder" />
-                </div>
-                <div className="project-links">
-                  {github && (
-                    <a
-                      href={github}
-                      aria-label="GitHub Link"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Icon name="GitHub" />
+      {language === "English" ? (
+        <>
+          <h2 className="numbered-heading">Somethings I have Built</h2>
+          <ul className="projects-grid">
+            <StyledProject>
+              <div className="project-inner">
+                <header>
+                  <div className="project-top">
+                    <div className="folder">
+                      <Icon name="Folder" />
+                    </div>
+                    <div className="project-links">
+                      {github && (
+                        <a
+                          href={github}
+                          aria-label="GitHub Link"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="GitHub" />
+                        </a>
+                      )}
+                      {external && (
+                        <a
+                          href={external}
+                          aria-label="External Link"
+                          className="external"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="External" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <h3 className="project-title">
+                    <a href={external} target="_blank" rel="noreferrer">
+                      {title}
                     </a>
+                  </h3>
+                  <div
+                    className="project-description"
+                    dangerouslySetInnerHTML={{ __html: html }}
+                  />
+                </header>
+                <footer>
+                  {tech && (
+                    <ul className="project-tech-list">
+                      {tech.map((tech, i) => (
+                        <li key={i}>{tech}</li>
+                      ))}
+                    </ul>
                   )}
-                  {external && (
-                    <a
-                      href={external}
-                      aria-label="External Link"
-                      className="external"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Icon name="External" />
-                    </a>
-                  )}
-                </div>
+                </footer>
               </div>
-              <h3 className="project-title">
-                <a href={external} target="_blank" rel="noreferrer">
-                  {title}
-                </a>
-              </h3>
-              <div
-                className="project-description"
-                dangerouslySetInnerHTML={{ __html: html }}
-              />
-            </header>
-            <footer>
-              {tech && (
-                <ul className="project-tech-list">
-                  {tech.map((tech, i) => (
-                    <li key={i}>{tech}</li>
-                  ))}
-                </ul>
-              )}
-            </footer>
-          </div>
-        </StyledProject>
-        <StyledProject>
-          <div className="project-inner" id="p2">
-            <header>
-              <div className="project-top">
-                <div className="folder">
-                  <Icon name="Folder" />
-                </div>
-                <div className="project-links">
-                  {github && (
-                    <a
-                      href="https://github.com/selehadin-cyber/gokpusu-sitesi"
-                      aria-label="GitHub Link"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Icon name="GitHub" />
-                    </a>
-                  )}
-                  {external && (
+            </StyledProject>
+            <StyledProject>
+              <div className="project-inner" id="p2">
+                <header>
+                  <div className="project-top">
+                    <div className="folder">
+                      <Icon name="Folder" />
+                    </div>
+                    <div className="project-links">
+                      {github && (
+                        <a
+                          href="https://github.com/selehadin-cyber/gokpusu-sitesi"
+                          aria-label="GitHub Link"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="GitHub" />
+                        </a>
+                      )}
+                      {external && (
+                        <a
+                          href="https://selehadin-cyber.github.io/gokpusu-sitesi/"
+                          aria-label="External Link"
+                          className="external"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="External" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <h3 className="project-title">
                     <a
                       href="https://selehadin-cyber.github.io/gokpusu-sitesi/"
-                      aria-label="External Link"
-                      className="external"
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <Icon name="External" />
+                      Official website of Gökpusu
                     </a>
+                  </h3>
+                  <div className="project-description">
+                    i made the official website for the startup technology team
+                    Gökpusu
+                  </div>
+                </header>
+                <footer>
+                  {tech && (
+                    <ul className="project-tech-list">
+                      {tech.map((tech, i) => (
+                        <li key={i}>{tech}</li>
+                      ))}
+                    </ul>
                   )}
-                </div>
+                </footer>
               </div>
-              <h3 className="project-title">
-                <a href="https://selehadin-cyber.github.io/gokpusu-sitesi/" target="_blank" rel="noreferrer">
-                  Official website of Gökpusu
-                </a>
-              </h3>
-              <div
-                className="project-description"
-                
-              >i made the official website for the startup technology team Gökpusu</div>
-            </header>
-            <footer>
-              {tech && (
-                <ul className="project-tech-list">
-                  {tech.map((tech, i) => (
-                    <li key={i}>{tech}</li>
-                  ))}
-                </ul>
-              )}
-            </footer>
-          </div>
-        </StyledProject>
-        <StyledProject>
-          <div className="project-inner" id="p3">
-            <header>
-              <div className="project-top">
-                <div className="folder">
-                  <Icon name="Folder" />
-                </div>
-                <div className="project-links">
-                  {github && (
-                    <a
-                      href="https://github.com/selehadin-cyber/Amana"
-                      aria-label="GitHub Link"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Icon name="GitHub" />
-                    </a>
-                  )}
-                  {external && (
+            </StyledProject>
+            <StyledProject>
+              <div className="project-inner" id="p3">
+                <header>
+                  <div className="project-top">
+                    <div className="folder">
+                      <Icon name="Folder" />
+                    </div>
+                    <div className="project-links">
+                      {github && (
+                        <a
+                          href="https://github.com/selehadin-cyber/Amana"
+                          aria-label="GitHub Link"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="GitHub" />
+                        </a>
+                      )}
+                      {external && (
+                        <a
+                          href="https://amanaorg.netlify.app/"
+                          aria-label="External Link"
+                          className="external"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="External" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <h3 className="project-title">
                     <a
                       href="https://amanaorg.netlify.app/"
-                      aria-label="External Link"
-                      className="external"
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <Icon name="External" />
+                      The Amana Association website
                     </a>
+                  </h3>
+                  <div className="project-description">
+                    was contracted to make a website for the Amana Humanitarian
+                    Association
+                  </div>
+                </header>
+                <footer>
+                  {tech && (
+                    <ul className="project-tech-list">
+                      {tech.map((tech, i) => (
+                        <li key={i}>{tech}</li>
+                      ))}
+                    </ul>
                   )}
-                </div>
+                </footer>
               </div>
-              <h3 className="project-title">
-                <a href="https://amanaorg.netlify.app/" target="_blank" rel="noreferrer">
-                  The Amana Association website
-                </a>
-              </h3>
-              <div
-                className="project-description"
-                
-              >was contracted to make a website for the Amana Humanitarian Association</div>
-            </header>
-            <footer>
-              {tech && (
-                <ul className="project-tech-list">
-                  {tech.map((tech, i) => (
-                    <li key={i}>{tech}</li>
-                  ))}
-                </ul>
-              )}
-            </footer>
-          </div>
-        </StyledProject>
-        <StyledProject>
-          <div className="project-inner" id="p4">
-            <header>
-              <div className="project-top">
-                <div className="folder">
-                  <Icon name="Folder" />
-                </div>
-                <div className="project-links">
-                  {github && (
-                    <a
-                      href="https://github.com/selehadin-cyber/Javascript-Calculator-with-Dark-mode"
-                      aria-label="GitHub Link"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Icon name="GitHub" />
-                    </a>
-                  )}
-                  {external && (
+            </StyledProject>
+            <StyledProject>
+              <div className="project-inner" id="p4">
+                <header>
+                  <div className="project-top">
+                    <div className="folder">
+                      <Icon name="Folder" />
+                    </div>
+                    <div className="project-links">
+                      {github && (
+                        <a
+                          href="https://github.com/selehadin-cyber/Javascript-Calculator-with-Dark-mode"
+                          aria-label="GitHub Link"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="GitHub" />
+                        </a>
+                      )}
+                      {external && (
+                        <a
+                          href="https://selehadin-cyber.github.io/Javascript-Hesap-Makinesi/"
+                          aria-label="External Link"
+                          className="external"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="External" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <h3 className="project-title">
                     <a
                       href="https://selehadin-cyber.github.io/Javascript-Hesap-Makinesi/"
-                      aria-label="External Link"
-                      className="external"
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <Icon name="External" />
+                      Calculator with dark-mode
                     </a>
+                  </h3>
+                  <div className="project-description">
+                    one missing feuture in many of todays calculators is dark
+                    mode, so I decided to make it myself
+                  </div>
+                </header>
+                <footer>
+                  {tech && (
+                    <ul className="project-tech-list">
+                      {tech.map((tech, i) => (
+                        <li key={i}>{tech}</li>
+                      ))}
+                    </ul>
                   )}
-                </div>
+                </footer>
               </div>
-              <h3 className="project-title">
-                <a href="https://selehadin-cyber.github.io/Javascript-Hesap-Makinesi/" target="_blank" rel="noreferrer">
-                  Calculator with dark-mode
-                </a>
-              </h3>
-              <div
-                className="project-description"
-               
-              >one missing feuture in many of todays calculators is dark mode, so I decided to make it myself</div>
-            </header>
-            <footer>
-              {tech && (
-                <ul className="project-tech-list">
-                  {tech.map((tech, i) => (
-                    <li key={i}>{tech}</li>
-                  ))}
-                </ul>
-              )}
-            </footer>
-          </div>
-        </StyledProject>
-      </ul>
+            </StyledProject>
+          </ul>
+        </>
+      ) : (
+        <>
+          <h2 className="numbered-heading">Yaptığım projeler</h2>
+          <ul className="projects-grid">
+            <StyledProject>
+              <div className="project-inner">
+                <header>
+                  <div className="project-top">
+                    <div className="folder">
+                      <Icon name="Folder" />
+                    </div>
+                    <div className="project-links">
+                      {github && (
+                        <a
+                          href={github}
+                          aria-label="GitHub Link"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="GitHub" />
+                        </a>
+                      )}
+                      {external && (
+                        <a
+                          href={external}
+                          aria-label="External Link"
+                          className="external"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="External" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <h3 className="project-title">
+                    <a href={external} target="_blank" rel="noreferrer">
+                      Web3 NFT projesi
+                    </a>
+                  </h3>
+                  <div className="project-description">
+                    bu web3 zeki kontract projesinde herkez metamask
+                    cuzdanlarını kullanarak premium sanat alabilir
+                  </div>
+                </header>
+                <footer>
+                  {tech && (
+                    <ul className="project-tech-list">
+                      {tech.map((tech, i) => (
+                        <li key={i}>{tech}</li>
+                      ))}
+                    </ul>
+                  )}
+                </footer>
+              </div>
+            </StyledProject>
+            <StyledProject>
+              <div className="project-inner" id="p2">
+                <header>
+                  <div className="project-top">
+                    <div className="folder">
+                      <Icon name="Folder" />
+                    </div>
+                    <div className="project-links">
+                      {github && (
+                        <a
+                          href="https://github.com/selehadin-cyber/gokpusu-sitesi"
+                          aria-label="GitHub Link"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="GitHub" />
+                        </a>
+                      )}
+                      {external && (
+                        <a
+                          href="https://selehadin-cyber.github.io/gokpusu-sitesi/"
+                          aria-label="External Link"
+                          className="external"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="External" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <h3 className="project-title">
+                    <a
+                      href="https://selehadin-cyber.github.io/gokpusu-sitesi/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Gökpusu'nun resmi websitesi
+                    </a>
+                  </h3>
+                  <div className="project-description">
+                    
+                    Gökpusu technoloji İHA takımı için resmi websayfa geliştirdim
+                  </div>
+                </header>
+                <footer>
+                  {tech && (
+                    <ul className="project-tech-list">
+                      {tech.map((tech, i) => (
+                        <li key={i}>{tech}</li>
+                      ))}
+                    </ul>
+                  )}
+                </footer>
+              </div>
+            </StyledProject>
+            <StyledProject>
+              <div className="project-inner" id="p3">
+                <header>
+                  <div className="project-top">
+                    <div className="folder">
+                      <Icon name="Folder" />
+                    </div>
+                    <div className="project-links">
+                      {github && (
+                        <a
+                          href="https://github.com/selehadin-cyber/Amana"
+                          aria-label="GitHub Link"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="GitHub" />
+                        </a>
+                      )}
+                      {external && (
+                        <a
+                          href="https://amanaorg.netlify.app/"
+                          aria-label="External Link"
+                          className="external"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="External" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <h3 className="project-title">
+                    <a
+                      href="https://amanaorg.netlify.app/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Amana insani yardım kuruluşu
+                    </a>
+                  </h3>
+                  <div className="project-description">
+                  Amana insani yardım kuruluşunun websitesini geliştirmek için kontrat aldım.
+                  </div>
+                </header>
+                <footer>
+                  {tech && (
+                    <ul className="project-tech-list">
+                      {tech.map((tech, i) => (
+                        <li key={i}>{tech}</li>
+                      ))}
+                    </ul>
+                  )}
+                </footer>
+              </div>
+            </StyledProject>
+            <StyledProject>
+              <div className="project-inner" id="p4">
+                <header>
+                  <div className="project-top">
+                    <div className="folder">
+                      <Icon name="Folder" />
+                    </div>
+                    <div className="project-links">
+                      {github && (
+                        <a
+                          href="https://github.com/selehadin-cyber/Javascript-Calculator-with-Dark-mode"
+                          aria-label="GitHub Link"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="GitHub" />
+                        </a>
+                      )}
+                      {external && (
+                        <a
+                          href="https://selehadin-cyber.github.io/Javascript-Hesap-Makinesi/"
+                          aria-label="External Link"
+                          className="external"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="External" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <h3 className="project-title">
+                    <a
+                      href="https://selehadin-cyber.github.io/Javascript-Hesap-Makinesi/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      karanlık modu olan hesap makinesi
+                    </a>
+                  </h3>
+                  <div className="project-description">
+                    bugünün çoğu hesap makinelerinde bulunmayan özelik karanlık modudur, ben de kendim onu eklemeye karar verdim.
+                  </div>
+                </header>
+                <footer>
+                  {tech && (
+                    <ul className="project-tech-list">
+                      {tech.map((tech, i) => (
+                        <li key={i}>{tech}</li>
+                      ))}
+                    </ul>
+                  )}
+                </footer>
+              </div>
+            </StyledProject>
+          </ul>
+        </>
+      )}
     </StyledProjectsSection>
   );
 };

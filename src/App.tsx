@@ -25,6 +25,7 @@ function App() {
         <Navbar
           className={navActive ? "active" : undefined}
           toggleFunction={toggleFunction}
+          language={language}
         />
 
         <div className="side">
@@ -66,10 +67,10 @@ function App() {
           </a>
           <About language={language} />
           {/* <Projects title={"web3 project"} description={"lorem ipsum dolor amit"} imgUrl={profile}/> */}
-          <ProjectInner />
-          <Contact />
+          <ProjectInner language={language} />
+          <Contact language={language} />
         </main>
-        <Footer />
+        <Footer language={language} />
       </div>
     </ThemeProvider>
   );
