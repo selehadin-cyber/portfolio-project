@@ -1,7 +1,7 @@
 import { Icon } from "../components/icons";
 import styled from "styled-components";
-import { srConfig } from '../config';
-import sr from '../utils/sr';
+import { srConfig } from "../config";
+import sr from "../utils/sr";
 import { useEffect, useRef } from "react";
 
 interface Language {
@@ -128,6 +128,7 @@ const StyledProject = styled.li`
     border-radius: var(--border-radius);
     background-color: var(--light-navy);
     transition: var(--transition);
+    height: 332px;
   }
 
   .project-top {
@@ -258,9 +259,7 @@ const ProjectInner: React.FunctionComponent<Language> = (
 ) => {
   /* const { frontmatter, html } = node;
     const { github, external, title, tech } = frontmatter; */
-    const revealTitle = useRef(null);
-    const revealProjects = useRef([]);
-
+  const revealTitle = useRef(null);
 
   const github = "https://github.com/selehadin-cyber/web3-nft-project";
   const title = "WEB3 nft project";
@@ -269,20 +268,19 @@ const ProjectInner: React.FunctionComponent<Language> = (
   const html =
     "a Web3 smart contract project in which everyone can buy premium art work using their metamask wallet.";
 
-    useEffect(() => {
-      
-  
-      sr.reveal(".numbered-heading", srConfig());
-      sr.reveal(".project-inner", srConfig());
-    }, []);
+  useEffect(() => {
+    sr.reveal(".numbered-heading", srConfig());
+    sr.reveal(".project-inner", srConfig());
+  }, []);
 
   return (
     <StyledProjectsSection id="projects">
       {language === "English" ? (
         <>
-          <h2 ref={revealTitle} className="numbered-heading">Somethings I have Built</h2>
+          <h2 ref={revealTitle} className="numbered-heading">
+            Somethings I have Built
+          </h2>
           <ul className="projects-grid">
-            
             <StyledProject /* ref={revealProjects.current} */>
               <div className="project-inner">
                 <header>
@@ -383,9 +381,9 @@ const ProjectInner: React.FunctionComponent<Language> = (
                 <footer>
                   {tech && (
                     <ul className="project-tech-list">
-                      {tech.map((tech, i) => (
-                        <li key={i}>{tech}</li>
-                      ))}
+                      <li>Html</li>
+                      <li>CSS</li>
+                      <li>Javascript</li>
                     </ul>
                   )}
                 </footer>
@@ -439,9 +437,9 @@ const ProjectInner: React.FunctionComponent<Language> = (
                 <footer>
                   {tech && (
                     <ul className="project-tech-list">
-                      {tech.map((tech, i) => (
-                        <li key={i}>{tech}</li>
-                      ))}
+                      <li>Reactjs</li>
+                      <li>Html</li>
+                      <li>CSS</li>
                     </ul>
                   )}
                 </footer>
@@ -495,9 +493,9 @@ const ProjectInner: React.FunctionComponent<Language> = (
                 <footer>
                   {tech && (
                     <ul className="project-tech-list">
-                      {tech.map((tech, i) => (
-                        <li key={i}>{tech}</li>
-                      ))}
+                      <li>Javascript</li>
+                      <li>Html</li>
+                      <li>CSS</li>
                     </ul>
                   )}
                 </footer>
@@ -602,16 +600,16 @@ const ProjectInner: React.FunctionComponent<Language> = (
                     </a>
                   </h3>
                   <div className="project-description">
-                    
-                    Gökpusu technoloji İHA takımı için resmi websayfa geliştirdim
+                    Gökpusu technoloji İHA takımı için resmi websayfa
+                    geliştirdim
                   </div>
                 </header>
                 <footer>
                   {tech && (
                     <ul className="project-tech-list">
-                      {tech.map((tech, i) => (
-                        <li key={i}>{tech}</li>
-                      ))}
+                        <li>Javascript</li>
+                        <li>Html</li>
+                        <li>CSS</li>
                     </ul>
                   )}
                 </footer>
@@ -658,15 +656,16 @@ const ProjectInner: React.FunctionComponent<Language> = (
                     </a>
                   </h3>
                   <div className="project-description">
-                  Amana insani yardım kuruluşunun websitesini geliştirmek için kontrat aldım.
+                    Amana insani yardım kuruluşunun websitesini geliştirmek için
+                    kontrat aldım.
                   </div>
                 </header>
                 <footer>
                   {tech && (
                     <ul className="project-tech-list">
-                      {tech.map((tech, i) => (
-                        <li key={i}>{tech}</li>
-                      ))}
+                        <li>Reactjs</li>
+                        <li>Html</li>
+                        <li>CSS</li>
                     </ul>
                   )}
                 </footer>
@@ -713,15 +712,16 @@ const ProjectInner: React.FunctionComponent<Language> = (
                     </a>
                   </h3>
                   <div className="project-description">
-                    bugünün çoğu hesap makinelerinde bulunmayan özelik karanlık modudur, ben de kendim onu eklemeye karar verdim.
+                    bugünün çoğu hesap makinelerinde bulunmayan özelik karanlık
+                    modudur, ben de kendim onu eklemeye karar verdim.
                   </div>
                 </header>
                 <footer>
                   {tech && (
                     <ul className="project-tech-list">
-                      {tech.map((tech, i) => (
-                        <li key={i}>{tech}</li>
-                      ))}
+                        <li>Reactjs</li>
+                        <li>Html</li>
+                        <li>CSS</li>
                     </ul>
                   )}
                 </footer>

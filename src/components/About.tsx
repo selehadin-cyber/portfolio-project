@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { srConfig } from "../config";
 import sr from "../utils/sr";
-import { usePrefersReducedMotion } from "../hooks";
 import profile from "../selo.jpg";
 
 interface Language {
@@ -176,13 +175,8 @@ const StyledPic = styled.div`
 
 const About: React.FunctionComponent<Language> = ({ language }) => {
   const revealContainer = useRef(null);
-  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (prefersReducedMotion) {
-      return;
-    }
-
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
@@ -232,18 +226,18 @@ const About: React.FunctionComponent<Language> = ({ language }) => {
             ) : (
               <>
                 <p>
-                  Merhaba! benim adım Selehadin.internette yaşayan şeyleri
+                  Merhaba! benim adım Selehadin. internette yaşayan şeyleri
                   geliştirmeyi severim. geliştirmeye olan ilgim 2020 yılında
-                  başladı
+                  başladı.
                 </p>
 
                 <p>
-                  bügüne geldiğimizde{" "}
+                bugüne geldiğimizde{" "}
                   <a href="https://www.erbakir.com.tr/">
                     kablo üretici firmada
                   </a>{" "}
                   ve <a href="https://gokpusu.com">bir start-upda</a> çalışma
-                  fırsattım oldu. Bügünlerde Önceliğim engelsiz, ileri ve digital tecrubbeleri {" "}
+                  fırsatım oldu. Bugünlerde Önceliğim engelsiz, ileri ve dijital tecrübeleri {" "}
                   <a href="https://gokpusu.com">Gökpusu</a> da geliştirmektır.
                 </p>
 
