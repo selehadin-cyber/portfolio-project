@@ -704,7 +704,7 @@ const ProjectInner: React.FunctionComponent<Language> = (
                   </div>
                   <h3 className="project-title">
                     <a
-                      href="https://selehadin-cyber.github.io/Javascript-Hesap-Makinesi/"
+                      href="https://selehadin-cyber.github.io/Javascript-Calculator-with-Dark-mode/"
                       target="_blank"
                       rel="noreferrer"
                     >

@@ -44,13 +44,13 @@ function App() {
           <h1 className="big-heading">Selehadin Abdurahman A.</h1>
           <h3 className="big-heading">
             {language === "English"
-              ? "i build meaning-full websites"
+              ? "I build meaningfull websites"
               : "değer katan websiteler geliştiriyorum"}
           </h3>
           <p className="hero-ptext">
             {language === "English" ? (
               <span>
-                i am graduate from University of Pamukkale.i enjoy making cool
+                I am graduate from University of Pamukkale. I enjoy making cool
                 and awesome sites and also making meaningfull and value
                 delivering apps"
               </span>

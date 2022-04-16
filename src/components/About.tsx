@@ -238,11 +238,11 @@ const About: React.FunctionComponent<Language> = ({ language }) => {
                   </a>{" "}
                   ve <a href="https://gokpusu.com">bir start-upda</a> çalışma
                   fırsatım oldu. Bugünlerde Önceliğim engelsiz, ileri ve dijital tecrübeleri {" "}
-                  <a href="https://gokpusu.com">Gökpusu</a> da geliştirmektır.
+                  <a href="https://gokpusu.com"> Gökpusu</a> da geliştirmektır.
                 </p>
 
                 <p>
-                  yakın zamanda çalışırken kolandığım teknolojiler:
+                  yakın zamanda çalışırken kullandığım teknolojiler:
                 </p>
               </>
             )}
