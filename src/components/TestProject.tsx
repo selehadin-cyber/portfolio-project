@@ -237,7 +237,7 @@ const StyledProject = styled.li`
     align-items: flex-end;
     flex-direction: row;
     flex-grow: 1;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding: 0;
     margin: 20px 0 0 0;
     list-style: none;
@@ -281,6 +281,62 @@ const ProjectInner: React.FunctionComponent<Language> = (
             Somethings I have Built
           </h2>
           <ul className="projects-grid">
+            <StyledProject>
+              <div className="project-inner" id="p2">
+                <header>
+                  <div className="project-top">
+                    <div className="folder">
+                      <Icon name="Folder" />
+                    </div>
+                    <div className="project-links">
+                      {github && (
+                        <a
+                          href="https://github.com/selehadin-cyber/netflix-clone"
+                          aria-label="GitHub Link"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="GitHub" />
+                        </a>
+                      )}
+                      {external && (
+                        <a
+                          href="https://netflix-clone-navy-seven.vercel.app/"
+                          aria-label="External Link"
+                          className="external"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="External" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <h3 className="project-title">
+                    <a
+                      href="https://netflix-clone-navy-seven.vercel.app/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Netflix Clone
+                    </a>
+                  </h3>
+                  <div className="project-description">
+                    i made a netflix clone to experience the technologies that
+                    are being used by the top companies.
+                  </div>
+                </header>
+                <footer>
+                  {tech && (
+                    <ul className="project-tech-list">
+                      <li>Nextjs</li>
+                      <li>Firebase</li>
+                      <li>Tailwindcss</li>
+                    </ul>
+                  )}
+                </footer>
+              </div>
+            </StyledProject>
             <StyledProject /* ref={revealProjects.current} */>
               <div className="project-inner">
                 <header>
@@ -508,6 +564,62 @@ const ProjectInner: React.FunctionComponent<Language> = (
           <h2 className="numbered-heading">Yaptığım projeler</h2>
           <ul className="projects-grid">
             <StyledProject>
+              <div className="project-inner" id="p2">
+                <header>
+                  <div className="project-top">
+                    <div className="folder">
+                      <Icon name="Folder" />
+                    </div>
+                    <div className="project-links">
+                      {github && (
+                        <a
+                          href="https://github.com/selehadin-cyber/netflix-clone"
+                          aria-label="GitHub Link"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="GitHub" />
+                        </a>
+                      )}
+                      {external && (
+                        <a
+                          href="https://netflix-clone-navy-seven.vercel.app/"
+                          aria-label="External Link"
+                          className="external"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="External" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <h3 className="project-title">
+                    <a
+                      href="https://netflix-clone-navy-seven.vercel.app/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Netflix klon
+                    </a>
+                  </h3>
+                  <div className="project-description">
+                    üst düzey firmaların kullandıkları teknolojilerini tecrubbe
+                    etmek için netflix klon yaptım.
+                  </div>
+                </header>
+                <footer>
+                  {tech && (
+                    <ul className="project-tech-list">
+                      <li>Nextjs</li>
+                      <li>Firebase</li>
+                      <li>Tailwindcss</li>
+                    </ul>
+                  )}
+                </footer>
+              </div>
+            </StyledProject>
+            <StyledProject>
               <div className="project-inner">
                 <header>
                   <div className="project-top">
@@ -607,9 +719,9 @@ const ProjectInner: React.FunctionComponent<Language> = (
                 <footer>
                   {tech && (
                     <ul className="project-tech-list">
-                        <li>Javascript</li>
-                        <li>Html</li>
-                        <li>CSS</li>
+                      <li>Javascript</li>
+                      <li>Html</li>
+                      <li>CSS</li>
                     </ul>
                   )}
                 </footer>
@@ -663,9 +775,9 @@ const ProjectInner: React.FunctionComponent<Language> = (
                 <footer>
                   {tech && (
                     <ul className="project-tech-list">
-                        <li>Reactjs</li>
-                        <li>Html</li>
-                        <li>CSS</li>
+                      <li>Reactjs</li>
+                      <li>Html</li>
+                      <li>CSS</li>
                     </ul>
                   )}
                 </footer>
@@ -719,9 +831,9 @@ const ProjectInner: React.FunctionComponent<Language> = (
                 <footer>
                   {tech && (
                     <ul className="project-tech-list">
-                        <li>Reactjs</li>
-                        <li>Html</li>
-                        <li>CSS</li>
+                      <li>Reactjs</li>
+                      <li>Html</li>
+                      <li>CSS</li>
                     </ul>
                   )}
                 </footer>
