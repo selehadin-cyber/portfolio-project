@@ -604,7 +604,7 @@ const ProjectInner: React.FunctionComponent<Language> = (
                     </a>
                   </h3>
                   <div className="project-description">
-                    üst düzey firmaların kullandıkları teknolojilerini tecrubbe
+                    üst düzey firmaların kullandıkları teknolojilerini tecrube
                     etmek için netflix klon yaptım.
                   </div>
                 </header>
