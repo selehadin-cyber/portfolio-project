@@ -281,6 +281,61 @@ const ProjectInner: React.FunctionComponent<Language> = (
             Somethings I have Built
           </h2>
           <ul className="projects-grid">
+          <StyledProject>
+              <div className="project-inner" id="p2">
+                <header>
+                  <div className="project-top">
+                    <div className="folder">
+                      <Icon name="Folder" />
+                    </div>
+                    <div className="project-links">
+                      {github && (
+                        <a
+                          href="https://github.com/selehadin-cyber/ecommerce"
+                          aria-label="GitHub Link"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="GitHub" />
+                        </a>
+                      )}
+                      {external && (
+                        <a
+                          href="https://ihsanstore.com/"
+                          aria-label="External Link"
+                          className="external"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="External" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <h3 className="project-title">
+                    <a
+                      href="https://ihsanstore.com/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Ihsan Store
+                    </a>
+                  </h3>
+                  <div className="project-description">
+                    made an e-commerce website for ihsan store
+                  </div>
+                </header>
+                <footer>
+                  {tech && (
+                    <ul className="project-tech-list">
+                      <li>Nextjs</li>
+                      <li>Sanity</li>
+                      <li>Typescript</li>
+                    </ul>
+                  )}
+                </footer>
+              </div>
+            </StyledProject>
             <StyledProject>
               <div className="project-inner" id="p2">
                 <header>
@@ -563,6 +618,61 @@ const ProjectInner: React.FunctionComponent<Language> = (
         <>
           <h2 className="numbered-heading">Yaptığım projeler</h2>
           <ul className="projects-grid">
+          <StyledProject>
+              <div className="project-inner" id="p2">
+                <header>
+                  <div className="project-top">
+                    <div className="folder">
+                      <Icon name="Folder" />
+                    </div>
+                    <div className="project-links">
+                      {github && (
+                        <a
+                          href="https://github.com/selehadin-cyber/ecommerce"
+                          aria-label="GitHub Link"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="GitHub" />
+                        </a>
+                      )}
+                      {external && (
+                        <a
+                          href="https://ihsanstore.com/"
+                          aria-label="External Link"
+                          className="external"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Icon name="External" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <h3 className="project-title">
+                    <a
+                      href="https://ihsanstore.com/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      İhsan Store
+                    </a>
+                  </h3>
+                  <div className="project-description">
+                    İhsan store için e-ticaret web-sitesi yaptım.
+                  </div>
+                </header>
+                <footer>
+                  {tech && (
+                    <ul className="project-tech-list">
+                      <li>Nextjs</li>
+                      <li>Sanity</li>
+                      <li>Typescript</li>
+                    </ul>
+                  )}
+                </footer>
+              </div>
+            </StyledProject>
             <StyledProject>
               <div className="project-inner" id="p2">
                 <header>

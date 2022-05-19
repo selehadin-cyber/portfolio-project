@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Navbar.scss";
 import Toggle from "./Toggle";
 import IconLogo from "../s_logo";
-import { srConfig } from "../config";
-import sr from "../utils/sr";
+
 
 interface ClassProps {
   className: any;
@@ -18,10 +17,7 @@ const Navbar: React.FunctionComponent<ClassProps> = ({
 }) => {
   const [hasScrolled, setHasScrolled] = useState(false);
 
-  useEffect(() => {
-    sr.reveal("ul a", srConfig());
-  }, []);
-
+  
   const changeNavBackground = () => {
     if (window.scrollY > 80) {
       setHasScrolled(true);
