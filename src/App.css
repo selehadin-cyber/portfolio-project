@@ -77,11 +77,16 @@ a {
 }
 h2 {
   font-size: clamp(14px, 5vw, 16px);
+  color: var(--lightest-slate);
+}
+h3 {
+  margin-top: 10px;
+  color: var(--slate);
+  line-height: 0.9;
 }
 .big-heading {
 	margin: 0px;
 	font-size: clamp(40px, 8vw, 60px);
-  
 }
 @media (max-width: 480px) {
   .big-heading {margin: 0 0 20px 2px;}

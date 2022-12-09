@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { srConfig } from "../config";
 import sr from "../utils/sr";
 import { useEffect, useRef } from "react";
+import { Projects } from "../content/Projects";
 
 interface Language {
   language: string;
@@ -254,20 +255,8 @@ const StyledProject = styled.li`
   }
 `;
 
-const ProjectInner: React.FunctionComponent<Language> = (
-  /* node */ { language }
-) => {
-  /* const { frontmatter, html } = node;
-    const { github, external, title, tech } = frontmatter; */
+const ProjectInner: React.FunctionComponent<Language> = ({ language }) => {
   const revealTitle = useRef(null);
-
-  const github = "https://github.com/selehadin-cyber/web3-nft-project";
-  const title = "WEB3 nft project";
-  const external = "http://web3-nft-project.vercel.app/";
-  const tech = ["Reactjs", "Nextjs", "Sanity"];
-  const html =
-    "a Web3 smart contract project in which everyone can buy premium art work using their metamask wallet.";
-
   useEffect(() => {
     sr.reveal(".numbered-heading", srConfig());
     sr.reveal(".project-inner", srConfig());
@@ -275,682 +264,71 @@ const ProjectInner: React.FunctionComponent<Language> = (
 
   return (
     <StyledProjectsSection id="projects">
-      {language === "English" ? (
+      {language == "English" ? (
         <>
           <h2 ref={revealTitle} className="numbered-heading">
             Somethings I have Built
           </h2>
           <ul className="projects-grid">
-          <StyledProject>
-              <div className="project-inner" id="p2">
-                <header>
-                  <div className="project-top">
-                    <div className="folder">
-                      <Icon name="Folder" />
+            {Projects.map((project, id) => (
+              <StyledProject key={id}>
+                <div className="project-inner" id="p2">
+                  <header>
+                    <div className="project-top">
+                      <div className="folder">
+                        <Icon name="Folder" />
+                      </div>
+                      <div className="project-links">
+                        {
+                          <a
+                            href={project.github}
+                            aria-label="GitHub Link"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <Icon name="GitHub" />
+                          </a>
+                        }
+                        {
+                          <a
+                            href={project.external}
+                            aria-label="External Link"
+                            className="external"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <Icon name="External" />
+                          </a>
+                        }
+                      </div>
                     </div>
-                    <div className="project-links">
-                      {github && (
-                        <a
-                          href="https://github.com/selehadin-cyber/ecommerce"
-                          aria-label="GitHub Link"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="GitHub" />
-                        </a>
-                      )}
-                      {external && (
-                        <a
-                          href="https://ihsanstore.com/"
-                          aria-label="External Link"
-                          className="external"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="External" />
-                        </a>
-                      )}
+                    <h3 className="project-title">
+                      <a
+                        href={project.external}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {project.title}
+                      </a>
+                    </h3>
+                    <div className="project-description">
+                      {project.description}
                     </div>
-                  </div>
-                  <h3 className="project-title">
-                    <a
-                      href="https://ihsanstore.com/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Ihsan Store
-                    </a>
-                  </h3>
-                  <div className="project-description">
-                    made an e-commerce website for ihsan store
-                  </div>
-                </header>
-                <footer>
-                  {tech && (
+                  </header>
+                  <footer>
                     <ul className="project-tech-list">
-                      <li>Nextjs</li>
-                      <li>Sanity</li>
-                      <li>Typescript</li>
-                    </ul>
-                  )}
-                </footer>
-              </div>
-            </StyledProject>
-            <StyledProject>
-              <div className="project-inner" id="p2">
-                <header>
-                  <div className="project-top">
-                    <div className="folder">
-                      <Icon name="Folder" />
-                    </div>
-                    <div className="project-links">
-                      {github && (
-                        <a
-                          href="https://github.com/selehadin-cyber/netflix-clone"
-                          aria-label="GitHub Link"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="GitHub" />
-                        </a>
-                      )}
-                      {external && (
-                        <a
-                          href="https://netflix-clone-navy-seven.vercel.app/"
-                          aria-label="External Link"
-                          className="external"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="External" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                  <h3 className="project-title">
-                    <a
-                      href="https://netflix-clone-navy-seven.vercel.app/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Netflix Clone
-                    </a>
-                  </h3>
-                  <div className="project-description">
-                    i made a netflix clone to experience the technologies that
-                    are being used by the top companies.
-                  </div>
-                </header>
-                <footer>
-                  {tech && (
-                    <ul className="project-tech-list">
-                      <li>Nextjs</li>
-                      <li>Firebase</li>
-                      <li>Tailwindcss</li>
-                    </ul>
-                  )}
-                </footer>
-              </div>
-            </StyledProject>
-            <StyledProject /* ref={revealProjects.current} */>
-              <div className="project-inner">
-                <header>
-                  <div className="project-top">
-                    <div className="folder">
-                      <Icon name="Folder" />
-                    </div>
-                    <div className="project-links">
-                      {github && (
-                        <a
-                          href={github}
-                          aria-label="GitHub Link"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="GitHub" />
-                        </a>
-                      )}
-                      {external && (
-                        <a
-                          href={external}
-                          aria-label="External Link"
-                          className="external"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="External" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                  <h3 className="project-title">
-                    <a href={external} target="_blank" rel="noreferrer">
-                      {title}
-                    </a>
-                  </h3>
-                  <div
-                    className="project-description"
-                    dangerouslySetInnerHTML={{ __html: html }}
-                  />
-                </header>
-                <footer>
-                  {tech && (
-                    <ul className="project-tech-list">
-                      {tech.map((tech, i) => (
-                        <li key={i}>{tech}</li>
-                      ))}
-                    </ul>
-                  )}
-                </footer>
-              </div>
-            </StyledProject>
-            <StyledProject>
-              <div className="project-inner" id="p2">
-                <header>
-                  <div className="project-top">
-                    <div className="folder">
-                      <Icon name="Folder" />
-                    </div>
-                    <div className="project-links">
-                      {github && (
-                        <a
-                          href="https://github.com/selehadin-cyber/gokpusu-sitesi"
-                          aria-label="GitHub Link"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="GitHub" />
-                        </a>
-                      )}
-                      {external && (
-                        <a
-                          href="https://selehadin-cyber.github.io/gokpusu-sitesi/"
-                          aria-label="External Link"
-                          className="external"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="External" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                  <h3 className="project-title">
-                    <a
-                      href="https://selehadin-cyber.github.io/gokpusu-sitesi/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Official website of Gökpusu
-                    </a>
-                  </h3>
-                  <div className="project-description">
-                    i made the official website for the startup technology team
-                    Gökpusu
-                  </div>
-                </header>
-                <footer>
-                  {tech && (
-                    <ul className="project-tech-list">
-                      <li>Html</li>
-                      <li>CSS</li>
-                      <li>Javascript</li>
-                    </ul>
-                  )}
-                </footer>
-              </div>
-            </StyledProject>
-            <StyledProject>
-              <div className="project-inner" id="p3">
-                <header>
-                  <div className="project-top">
-                    <div className="folder">
-                      <Icon name="Folder" />
-                    </div>
-                    <div className="project-links">
-                      {github && (
-                        <a
-                          href="https://github.com/selehadin-cyber/Amana"
-                          aria-label="GitHub Link"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="GitHub" />
-                        </a>
-                      )}
-                      {external && (
-                        <a
-                          href="https://amanaorg.netlify.app/"
-                          aria-label="External Link"
-                          className="external"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="External" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                  <h3 className="project-title">
-                    <a
-                      href="https://amanaorg.netlify.app/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      The Amana Association website
-                    </a>
-                  </h3>
-                  <div className="project-description">
-                    was contracted to make a website for the Amana Humanitarian
-                    Association
-                  </div>
-                </header>
-                <footer>
-                  {tech && (
-                    <ul className="project-tech-list">
-                      <li>Reactjs</li>
-                      <li>Html</li>
-                      <li>CSS</li>
-                    </ul>
-                  )}
-                </footer>
-              </div>
-            </StyledProject>
-            <StyledProject>
-              <div className="project-inner" id="p4">
-                <header>
-                  <div className="project-top">
-                    <div className="folder">
-                      <Icon name="Folder" />
-                    </div>
-                    <div className="project-links">
-                      {github && (
-                        <a
-                          href="https://github.com/selehadin-cyber/Javascript-Calculator-with-Dark-mode"
-                          aria-label="GitHub Link"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="GitHub" />
-                        </a>
-                      )}
-                      {external && (
-                        <a
-                          href="https://selehadin-cyber.github.io/Javascript-Calculator-with-Dark-mode/"
-                          aria-label="External Link"
-                          className="external"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="External" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                  <h3 className="project-title">
-                    <a
-                      href="https://selehadin-cyber.github.io/Javascript-Calculator-with-Dark-mode/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Calculator with dark-mode
-                    </a>
-                  </h3>
-                  <div className="project-description">
-                    one missing feuture in many of todays calculators is dark
-                    mode, so I decided to make it myself
-                  </div>
-                </header>
-                <footer>
-                  {tech && (
-                    <ul className="project-tech-list">
-                      <li>Javascript</li>
-                      <li>Html</li>
-                      <li>CSS</li>
-                    </ul>
-                  )}
-                </footer>
-              </div>
-            </StyledProject>
+                    {project.techs.map((tech, id) => (
+                        <li key={id}>{tech}</li>                        
+                        ))}
+                        </ul>
+                  </footer>
+                </div>
+              </StyledProject>
+            ))}
           </ul>
         </>
       ) : (
-        <>
-          <h2 className="numbered-heading">Yaptığım projeler</h2>
-          <ul className="projects-grid">
-          <StyledProject>
-              <div className="project-inner" id="p2">
-                <header>
-                  <div className="project-top">
-                    <div className="folder">
-                      <Icon name="Folder" />
-                    </div>
-                    <div className="project-links">
-                      {github && (
-                        <a
-                          href="https://github.com/selehadin-cyber/ecommerce"
-                          aria-label="GitHub Link"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="GitHub" />
-                        </a>
-                      )}
-                      {external && (
-                        <a
-                          href="https://ihsanstore.com/"
-                          aria-label="External Link"
-                          className="external"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="External" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                  <h3 className="project-title">
-                    <a
-                      href="https://ihsanstore.com/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      İhsan Store
-                    </a>
-                  </h3>
-                  <div className="project-description">
-                    İhsan store için e-ticaret web-sitesi yaptım.
-                  </div>
-                </header>
-                <footer>
-                  {tech && (
-                    <ul className="project-tech-list">
-                      <li>Nextjs</li>
-                      <li>Sanity</li>
-                      <li>Typescript</li>
-                    </ul>
-                  )}
-                </footer>
-              </div>
-            </StyledProject>
-            <StyledProject>
-              <div className="project-inner" id="p2">
-                <header>
-                  <div className="project-top">
-                    <div className="folder">
-                      <Icon name="Folder" />
-                    </div>
-                    <div className="project-links">
-                      {github && (
-                        <a
-                          href="https://github.com/selehadin-cyber/netflix-clone"
-                          aria-label="GitHub Link"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="GitHub" />
-                        </a>
-                      )}
-                      {external && (
-                        <a
-                          href="https://netflix-clone-navy-seven.vercel.app/"
-                          aria-label="External Link"
-                          className="external"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="External" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                  <h3 className="project-title">
-                    <a
-                      href="https://netflix-clone-navy-seven.vercel.app/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Netflix klon
-                    </a>
-                  </h3>
-                  <div className="project-description">
-                    üst düzey firmaların kullandıkları teknolojilerini tecrube
-                    etmek için netflix klon yaptım.
-                  </div>
-                </header>
-                <footer>
-                  {tech && (
-                    <ul className="project-tech-list">
-                      <li>Nextjs</li>
-                      <li>Firebase</li>
-                      <li>Tailwindcss</li>
-                    </ul>
-                  )}
-                </footer>
-              </div>
-            </StyledProject>
-            <StyledProject>
-              <div className="project-inner">
-                <header>
-                  <div className="project-top">
-                    <div className="folder">
-                      <Icon name="Folder" />
-                    </div>
-                    <div className="project-links">
-                      {github && (
-                        <a
-                          href={github}
-                          aria-label="GitHub Link"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="GitHub" />
-                        </a>
-                      )}
-                      {external && (
-                        <a
-                          href={external}
-                          aria-label="External Link"
-                          className="external"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="External" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                  <h3 className="project-title">
-                    <a href={external} target="_blank" rel="noreferrer">
-                      Web3 NFT projesi
-                    </a>
-                  </h3>
-                  <div className="project-description">
-                    bu web3 zeki kontract projesinde herkez metamask
-                    cuzdanlarını kullanarak premium sanat alabilir
-                  </div>
-                </header>
-                <footer>
-                  {tech && (
-                    <ul className="project-tech-list">
-                      {tech.map((tech, i) => (
-                        <li key={i}>{tech}</li>
-                      ))}
-                    </ul>
-                  )}
-                </footer>
-              </div>
-            </StyledProject>
-            <StyledProject>
-              <div className="project-inner" id="p2">
-                <header>
-                  <div className="project-top">
-                    <div className="folder">
-                      <Icon name="Folder" />
-                    </div>
-                    <div className="project-links">
-                      {github && (
-                        <a
-                          href="https://github.com/selehadin-cyber/gokpusu-sitesi"
-                          aria-label="GitHub Link"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="GitHub" />
-                        </a>
-                      )}
-                      {external && (
-                        <a
-                          href="https://selehadin-cyber.github.io/gokpusu-sitesi/"
-                          aria-label="External Link"
-                          className="external"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="External" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                  <h3 className="project-title">
-                    <a
-                      href="https://selehadin-cyber.github.io/gokpusu-sitesi/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Gökpusu'nun resmi websitesi
-                    </a>
-                  </h3>
-                  <div className="project-description">
-                    Gökpusu technoloji İHA takımı için resmi websayfa
-                    geliştirdim
-                  </div>
-                </header>
-                <footer>
-                  {tech && (
-                    <ul className="project-tech-list">
-                      <li>Javascript</li>
-                      <li>Html</li>
-                      <li>CSS</li>
-                    </ul>
-                  )}
-                </footer>
-              </div>
-            </StyledProject>
-            <StyledProject>
-              <div className="project-inner" id="p3">
-                <header>
-                  <div className="project-top">
-                    <div className="folder">
-                      <Icon name="Folder" />
-                    </div>
-                    <div className="project-links">
-                      {github && (
-                        <a
-                          href="https://github.com/selehadin-cyber/Amana"
-                          aria-label="GitHub Link"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="GitHub" />
-                        </a>
-                      )}
-                      {external && (
-                        <a
-                          href="https://amanaorg.netlify.app/"
-                          aria-label="External Link"
-                          className="external"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="External" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                  <h3 className="project-title">
-                    <a
-                      href="https://amanaorg.netlify.app/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Amana insani yardım kuruluşu
-                    </a>
-                  </h3>
-                  <div className="project-description">
-                    Amana insani yardım kuruluşunun websitesini geliştirmek için
-                    kontrat aldım.
-                  </div>
-                </header>
-                <footer>
-                  {tech && (
-                    <ul className="project-tech-list">
-                      <li>Reactjs</li>
-                      <li>Html</li>
-                      <li>CSS</li>
-                    </ul>
-                  )}
-                </footer>
-              </div>
-            </StyledProject>
-            <StyledProject>
-              <div className="project-inner" id="p4">
-                <header>
-                  <div className="project-top">
-                    <div className="folder">
-                      <Icon name="Folder" />
-                    </div>
-                    <div className="project-links">
-                      {github && (
-                        <a
-                          href="https://github.com/selehadin-cyber/Javascript-Calculator-with-Dark-mode"
-                          aria-label="GitHub Link"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="GitHub" />
-                        </a>
-                      )}
-                      {external && (
-                        <a
-                          href="https://selehadin-cyber.github.io/Javascript-Calculator-with-Dark-mode/"
-                          aria-label="External Link"
-                          className="external"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Icon name="External" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                  <h3 className="project-title">
-                    <a
-                      href="https://selehadin-cyber.github.io/Javascript-Calculator-with-Dark-mode/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      karanlık modu olan hesap makinesi
-                    </a>
-                  </h3>
-                  <div className="project-description">
-                    bugünün çoğu hesap makinelerinde bulunmayan özelik karanlık
-                    modudur, ben de kendim onu eklemeye karar verdim.
-                  </div>
-                </header>
-                <footer>
-                  {tech && (
-                    <ul className="project-tech-list">
-                      <li>Reactjs</li>
-                      <li>Html</li>
-                      <li>CSS</li>
-                    </ul>
-                  )}
-                </footer>
-              </div>
-            </StyledProject>
-          </ul>
-        </>
+        <></>
       )}
     </StyledProjectsSection>
   );
