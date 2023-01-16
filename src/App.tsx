@@ -10,7 +10,8 @@ import Contact from "./components/Contact";
 import ProjectInner from "./components/TestProject";
 import Footer from "./components/footer";
 import { ThemeProvider } from "styled-components";
-import { EnglishTheme, TurkishTheme } from "./components/Themes";
+import { EnglishTheme, GlobalStyles, TurkishTheme } from "./components/Themes";
+import Hero from "./components/Hero";
 
 function App() {
   const [navActive, setNavActive] = useState(false);
@@ -22,6 +23,8 @@ function App() {
   return (
     <ThemeProvider theme={language === "English" ? EnglishTheme : TurkishTheme}>
       <div className="App">
+      <GlobalStyles />
+      
         <Navbar
           className={navActive ? "active" : undefined}
           toggleFunction={toggleFunction}
@@ -37,8 +40,9 @@ function App() {
         <div onClick={() => setNavActive(!navActive)}>
           <Humburger />
         </div>
-        <main className="fullheight">
-          <h2>
+        <main className="fillheight">
+        <Hero />
+          {/* <h2>
             {language === "English" ? "Hi, my name is" : "Merhaba, benim adım"}
           </h2>
           <h1 className="big-heading">Selehadin Abdurahman A.</h1>
@@ -64,7 +68,7 @@ function App() {
           </p>
           <a href="mailto:sele4416@gmail.com" className="cta">
             {language === "English" ? ("Get in touch") : ("iletişime geçin")}
-          </a>
+          </a> */}
           <About language={language} />
           {/* <Projects title={"web3 project"} description={"lorem ipsum dolor amit"} imgUrl={profile}/> */}
           <ProjectInner language={language} />

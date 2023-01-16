@@ -264,7 +264,7 @@ const ProjectInner: React.FunctionComponent<Language> = ({ language }) => {
 
   return (
     <StyledProjectsSection id="projects">
-      {language == "English" ? (
+      {language === "English" ? (
         <>
           <h2 ref={revealTitle} className="numbered-heading">
             Somethings I have Built
