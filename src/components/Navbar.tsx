@@ -48,14 +48,9 @@ const Navbar: React.FunctionComponent<ClassProps> = ({
             <a href="#projects">
               <li>Works</li>
             </a>
-            <li
-              className="toggle-container"
-              onClick={() => {
-                toggleFunction();
-              }}
-            >
-              EN <Toggle /> TR
-            </li>
+            <a href="https://raw.githubusercontent.com/selehadin-cyber/portfolio-project/main/src/selehadin%20abdela.pdf">
+              <li>Resume</li>
+            </a>
           </ul>
         ) : (
           <ul className={hasScrolled ? "active" : undefined}>
