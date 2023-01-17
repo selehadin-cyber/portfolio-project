@@ -17,6 +17,10 @@ function App() {
   const [navActive, setNavActive] = useState(false);
   const [language, setLanguage] = useState("English");
 
+  const onBlur = () => {
+    setNavActive(false)
+  }
+
   const toggleFunction = () => {
     language === "English" ? setLanguage("Turkish") : setLanguage("English");
   };
@@ -29,6 +33,7 @@ function App() {
           className={navActive ? "active" : undefined}
           toggleFunction={toggleFunction}
           language={language}
+          onBlur={onBlur}
         />
 
         <div className="side">

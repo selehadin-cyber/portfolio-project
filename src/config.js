@@ -28,4 +28,22 @@ module.exports = {
     viewFactor,
     viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
   }),
+  navLinks: [
+    {
+      name: 'About',
+      url: '/#about',
+    },
+    {
+      name: 'Work',
+      url: '/#projects',
+    },
+    {
+      name: 'Contact',
+      url: '/#contact',
+    },
+    {
+      name: 'Resume',
+      url: 'https://raw.githubusercontent.com/selehadin-cyber/portfolio-project/main/src/selehadin%20abdela.pdf',
+    }
+  ],
 };
