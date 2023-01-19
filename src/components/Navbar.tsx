@@ -1,32 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { MutableRefObject, useEffect, useRef, useState } from "react";
 import "./Navbar.scss";
 import Toggle from "./Toggle";
 import IconLogo from "../s_logo";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { navLinks } from "../config";
 import { navDelay, loaderDelay } from "../utils";
-import { usePrefersReducedMotion } from "../hooks";
-
+import { useOnClickOutside, usePrefersReducedMotion } from "../hooks";
+import Humburger from "./Humburger";
 
 interface ClassProps {
-  className: any;
   toggleFunction: Function;
   language: string;
-  onBlur: () => void
 }
 
 const Navbar: React.FunctionComponent<ClassProps> = ({
-  className,
   toggleFunction,
   language,
-  onBlur
 }) => {
+  const [navActive, setNavActive] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  const [focusout, setFocusout] = useState(false)
   const prefersReducedMotion = usePrefersReducedMotion();
-  
-  console.log(focusout)
+
+  console.log(`nav focus ${navActive}`);
+  const ref = useRef();
+
+  useOnClickOutside(ref, () => setNavActive(false));
+
   useEffect(() => {
     if (prefersReducedMotion) {
       return;
@@ -51,20 +51,25 @@ const Navbar: React.FunctionComponent<ClassProps> = ({
           <IconLogo />
         </a>
       </div>
-      <nav className={className}>
+      <nav className={navActive ? "active" : ""} ref={ref as any}>
         {language === "English" ? (
           <ul className={hasScrolled ? "active" : undefined}>
             <TransitionGroup component={null}>
-            {isMounted &&
-                    navLinks &&
-                    navLinks.map(({ url, name }, i) => (
-                      <CSSTransition key={i} classNames="fadedown" timeout={2000}>
-                        <li key={i} style={{ transitionDelay: `${i * 100}ms` }}>
-                          <a href={url}>{name}</a>
-                        </li>
-                      </CSSTransition>
-                    ))}
-                </TransitionGroup>
+              {isMounted &&
+                navLinks &&
+                navLinks.map(({ url, name }, i) => (
+                  <CSSTransition key={i} classNames="fadedown" timeout={2000}>
+                    <li key={i} style={{ transitionDelay: `${i * 100}ms` }}>
+                      <a href={url}>{name}</a>
+                    </li>
+                  </CSSTransition>
+                ))}
+            </TransitionGroup>
+            {navActive ? null : (
+              <div onClick={() => setNavActive(!navActive)}>
+                <Humburger />
+              </div>
+            )}
           </ul>
         ) : (
           <ul className={hasScrolled ? "active" : undefined}>

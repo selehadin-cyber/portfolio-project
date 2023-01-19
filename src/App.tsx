@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 /* import logo from "./bitmassssp.png"; */
 import "./App.css";
 import Navbar from "./components/Navbar";
@@ -12,14 +12,12 @@ import Footer from "./components/footer";
 import { ThemeProvider } from "styled-components";
 import { EnglishTheme, GlobalStyles, TurkishTheme } from "./components/Themes";
 import Hero from "./components/Hero";
+import { useOnClickOutside } from "./hooks";
 
 function App() {
-  const [navActive, setNavActive] = useState(false);
+  
   const [language, setLanguage] = useState("English");
 
-  const onBlur = () => {
-    setNavActive(false)
-  }
 
   const toggleFunction = () => {
     language === "English" ? setLanguage("Turkish") : setLanguage("English");
@@ -30,10 +28,8 @@ function App() {
       <GlobalStyles />
       
         <Navbar
-          className={navActive ? "active" : undefined}
           toggleFunction={toggleFunction}
-          language={language}
-          onBlur={onBlur}
+          language={language}        
         />
 
         <div className="side">
@@ -42,9 +38,9 @@ function App() {
         <div className="sideright">
           <Email />
         </div>
-        <div onClick={() => setNavActive(!navActive)}>
+        {/* <div onClick={() => setNavActive(!navActive)}>
           <Humburger />
-        </div>
+        </div> */}
         <main className="fillheight">
         <Hero />
           {/* <h2>
