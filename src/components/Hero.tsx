@@ -83,19 +83,20 @@ const Hero = () => {
 
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Selehadin Abdurahman A.</h2>;
-  const three = <h3 className="big-heading">I build meaningfull websites.</h3>;
+  const three = <h3 className="big-heading">I build meaningful websites.</h3>;
   const four = (
     <p className="hero-ptext">
       <span>
-        I am graduate from University of Pamukkale. I enjoy making cool and
-        awesome sites and also making meaningfull and value delivering apps.
+        I am a graduate of the University of Pamukkale and I specialize in
+        creating visually appealing, user-friendly and performant websites and
+        apps that deliver value.
       </span>
     </p>
   );
   const five = (
     <a href="mailto:sele4416@gmail.com" className="email-link">
-            {true ? ("Get in touch") : ("iletişime geçin")}
-          </a>
+      {true ? "Get in touch" : "iletişime geçin"}
+    </a>
   );
 
   const items = [one, two, three, four, five];
