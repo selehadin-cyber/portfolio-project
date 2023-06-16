@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { srConfig } from "../config";
 import sr from "../utils/sr";
-import profile from "../selo1.JPG";
+import profile from "../selo1.jpg";
 
 interface Language {
   language: string;
