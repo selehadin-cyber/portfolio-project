@@ -13,6 +13,13 @@ export const Projects = [
     "techs": ["NextJS", "tailwindcss", "Firebase"],
     "description": "An e-commerce website for Ihsanstore."
   },
+ {
+    "title": "Ihsan Backtesting",
+    "github": "https://github.com/selehadin-cyber/ihsan-backtesting",
+    "external": "https://ihsan-backtesting.vercel.app/",
+    "techs": ["NextJS", "tailwindcss", "RestAPI"],
+    "description": "Had always wanted to visualize how my trading strategies would perform and how much money I could make."
+  }, 
   {
     "title": "Netflix Clone",
     "github": "https://github.com/selehadin-cyber/netflix-clone",
