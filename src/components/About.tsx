@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { srConfig } from "../config";
 import sr from "../utils/sr";
-import profile from "../selo1.jpg";
+import profile from "../selo2.jpg";
 
 interface Language {
   language: string;
@@ -215,10 +215,10 @@ const About: React.FunctionComponent<Language> = ({ language }) => {
                   <a href="https://www.erbakir.com.tr/">
                     a cable manufacturing company
                   </a>{" "}
-                  and <a href="https://gokpusu.com">a start-up</a>. My main
+                  and <a href="https://liviqon.com/">a start-up</a>. My main
                   focus these days is building accessible, inclusive products
                   and digital experiences at{" "}
-                  <a href="https://gokpusu.com">Gökpusu</a> for a variety of
+                  <a href="https://liviqon.com/">Liviqon</a> for a variety of
                   clients.
                 </p>
 
